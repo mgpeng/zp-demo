@@ -1,0 +1,37 @@
+@import "src/_include-media";
+@import "src/_flex";
+@import "src/_mixin-transition";
+@import "_hamburger-ani";
+
+@import "src/_keyframes-mixin";
+
+
+.header-up-part-container .map-active-menu{
+    height: 1.8em;
+    margin: auto;
+    width: 53em;
+    padding: 0;
+ & .map-active-menu__container{
+    visibility: hidden;
+    @include flexbox;
+    @include flex-direction(row);
+    @include justify-content(space-around);
+    
+    & .map-active-menu__item{
+        position: relative;
+        background: rgba(144,251,223,0);
+        border: 1px rgba(178, 235, 242, 0.26) solid;
+        border-radius: 3px;
+    }
+    & img.map-active-menu__avatar,
+    & img.map-active-menu__logo{
+        width:18px;
+        height:18px;
+        border-radius: 50%;
+    }
+    & span.map-active-menu__text{
+       font-size:8px;
+       color:unquote("rgb(#{$palette-cyan-100})");
+    }
+}
+}
