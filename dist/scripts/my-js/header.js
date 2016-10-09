@@ -2,10 +2,10 @@ var cnt= $(" .mdl-layout__header ").find(" .header-search__container ");
           cnt.on("click",function(){
             var str=$(".mdl-layout__header")
                       .find(".header-text__content--short");
-            if (cnt.hasClass("is-focused") ){
+            if (cnt.hasClass("is-focused")){
                 str.css("display","none");
             }
-            console.log("!!!");
+            // console.log("!!!");
           });  
           // ------below mdl drawer or hamburger menu
           $(".mdl-layout__header").on("click",".mdl-layout__drawer-button",function() {
