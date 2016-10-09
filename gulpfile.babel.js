@@ -219,7 +219,7 @@ gulp.task('default', ['clean'], cb =>
   )
 );
 // deploy to github 
-gulp.task('deploy', ['build'], () => {
+gulp.task('deploy', ['default'], () => {    //--'build'
   return gulp.src('dist')
     .pipe($.subtree())
     .pipe($.clean());
@@ -283,3 +283,6 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
 // below substree dist from local master to remote gh-pages 
 // git add dist && git commit -m "Initial dist subtree commit"
 // git subtree push --prefix dist origin gh-pages
+
+
+//  git push origin `git subtree split --prefix dist gh-pages`:gh-pages --force
