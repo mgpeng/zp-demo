@@ -282,8 +282,11 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
 
 
 // below substree dist from local master to remote gh-pages 
-// git add dist && git commit -m "Initial dist subtree commit"
-// git subtree push --prefix dist origin gh-pages
+// 1)github create repo only master
+// 2)git remote add http...  to connect local project folder to this new remote repo
+// 3)git push -u origin master  to upload local to remote 
+// 4)  git checkout master
+// 5) git add dist && git commit -m "Initial dist subtree commit"
+// 6) git subtree push --prefix dist origin gh-pages
 
-//  git checkout master
-//  git push origin `git subtree split --prefix dist gh-pages`:gh-pages --force
+
