@@ -219,7 +219,8 @@ gulp.task('default', ['clean'], cb =>
   )
 );
 // deploy to github 
-gulp.task('deploy', ['default'], () => {    //--'build'
+gulp.task('deploy', ['default'], () => {    
+  // --'build'
   return gulp.src('dist')
     .pipe($.subtree())
     .pipe($.clean());
