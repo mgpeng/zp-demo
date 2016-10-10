@@ -1,0 +1,73 @@
+
+@import "src/material-design-lite";
+@import "src/_include-media";
+@import "src/_flex";
+@import "src/_mixin-transition";
+
+//----import map
+@import "_demo-header__map";
+@import "_demo-header__map-active-menu";
+//---import text-search
+@import "_demo-header__text-search";
+//---drawer
+@import "_demo-header__drawer";
+//--tab-bar
+@import "_demo-header__tab-bar";
+// --- chart
+@import "_chart-catagory";
+// ---- construction page and design idea
+@import "_construction-page";
+// -- warn bug
+@import "_warning-bug";
+// --- add logo
+@import "_add-logo";
+
+
+//---------below header part 
+
+.mdl-layout__header{
+     transition:background 0.3s;
+     background-image: url('../images/material-design-bg-37-t.jpg');
+     background-size:cover;
+     background-position:center;
+
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(center);
+    &.is-bg-changed{
+        background:rgb(0, 62, 107) ! important;
+        @include media('<=tablet') {
+        transition:width 0.4s;
+                &{
+                    width:4.5em;
+                    background:rgb(0, 62, 107)! important;
+                }   
+        }
+    }
+}
+@include media('>phone','<=tablet') {
+     .mdl-layout__header{
+       height:2em;
+     }
+}
+@include media('<=phone') {
+     .mdl-layout__header{
+       height:1.5em;
+     }
+}
+//-----------below header-up-part
+.header-up-part-container{
+     @include flexbox;
+     @include flex-direction(column);
+     @include justify-content(center);
+     z-index:-1;
+}
+.mdl-layout__header .header-space{
+    display:none;
+}
+@include media(">tablet") {
+  .mdl-layout__header .header-space{
+      display:block;
+  }
+}
+//---------above header part 

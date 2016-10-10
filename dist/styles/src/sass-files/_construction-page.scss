@@ -1,0 +1,26 @@
+
+@each $one in search,hottest,coldest,agent,consult{
+    #construction-#{$one}{
+        height: 100%;
+        width: 100%;
+        position: relative;
+        & img{
+            width: 110px;
+            height: 85px;
+        }
+        & .warning-content {
+          width:100%;
+          height:300px;
+          text-align:center;
+          color:red;
+          margin:0;
+            & .construction-design-text{
+              text-align: center;
+              color:black;
+            }
+        }
+   }
+}
+
+
+

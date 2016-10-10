@@ -1,0 +1,120 @@
+
+@import "src/_include-media";
+@import "src/_flex";
+@import "src/_mixin-transition";
+@import "_hamburger-ani";
+
+@import "src/_keyframes-mixin";
+
+//----------below map
+.header-up-part-container .header-space.map-container{
+    height:15em;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow:hidden;
+    & svg{
+        width: 900px;
+        height: 600px;
+    }
+}
+//-------below inside svg
+    .world-map-svg__each{
+        transition: fill 0.5s ease-out;
+        fill: unquote("rgb(#{$palette-cyan-300})");
+        fill-opacity: 0.1;
+        stroke: unquote("rgb(#{$palette-cyan-300})");
+        stroke-opacity: 1;
+        stroke-width: 1;
+        &:hover{
+          fill: unquote("rgb(#{$palette-cyan-500})");
+          fill-opacity: 0.45;
+        }
+    }
+// ----below-- set isDoing class
+$isDoing-list : (
+  isBidding unquote("rgb(#{$palette-cyan-700})") unquote("rgb(#{$palette-cyan-A700})") 1em,
+  isWaiting  unquote("rgb(#{$palette-cyan-700})")  unquote("rgb(#{$palette-cyan-A700})") 0.9em,
+  hasFurnish  unquote("rgb(#{$palette-cyan-700})") unquote("rgb(#{$palette-cyan-A700})") 0.8em,
+  hasPorcelain  unquote("rgb(#{$palette-cyan-700})") unquote("rgb(#{$palette-cyan-A700})") 0.8em,
+  isLiveVideo  unquote("rgb(#{$palette-cyan-700})") unquote("rgb(#{$palette-cyan-A700})") 0.8em
+);
+    %isSomething{
+                transition: fill 0.5s ease-out;
+                fill-opacity: 0.7;
+                stroke: unquote("rgb(#{$palette-cyan-100})");
+                stroke-opacity: 1;
+                stroke-width: 2px;
+                transform-origin: center;
+    }
+@each $value in $isDoing-list{
+     .#{nth($value,1)}{
+                @extend %isSomething;
+                fill: nth($value,2);
+                &:hover{
+                   fill: nth($value,3);
+                }
+    }
+}
+
+//-------above inside svg
+//-------below add isBidding info and isBidding ani
+
+@each $value in $isDoing-list {
+.world-map-note__#{nth($value,1)}{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position:absolute;
+    z-index: 1000;
+    background-color: rgba(103, 189, 192,0.3);
+    border-radius: 3px;
+    text-align: center;
+    // color: white;
+    padding-left: 4px;
+    padding-right: 4px;
+    
+    & .world-map-note__#{nth($value,1)}-title{
+        font-size:11px !important;
+        color:unquote("rgb(#{$palette-cyan-50})");
+        & span.xs-font-size{
+            font-size:8px !important;
+            color:unquote("rgb(#{$palette-cyan-100})");
+        }
+    }
+    & .world-map-note__#{nth($value,1)}-container{
+        display:none;
+        // display:flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size:10px !important;
+       & .world-map-note__#{nth($value,1)}-agnecy xs-font-size{
+         font-size:8px !important;
+        }
+        & .world-map-note__#{nth($value,1)}-item xs-font-size{
+            font-size:8px !important;
+        }
+    }
+     & .world-map-note__#{nth($value,1)}-buyer{
+         display:none;
+        font-size:10px !important;
+        &  xs-font-size{
+            font-size:8px !important;
+        }
+    }
+}
+} // ------- end @each
+//-------above add isDoing info and isDoing ani
+.header-up-part-container .header-space.map-active-menu{
+    height: 2em;
+    margin-top:-27px;
+    // background-color: unquote("rgb(#{$palette-blue-50})");
+}
+//----------above map
+
+
