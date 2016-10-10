@@ -1,14 +1,5 @@
  var WorldMapIsDoingMock=(function(){
-    //    var mockCountryArr= function() {
-    //        var arr =[$("svg#world-map-svg").find("#FR"),
-    //                     $("svg#world-map-svg").find("#FI"),
-    //                     $("svg#world-map-svg").find("#GB"),
-    //                     $("svg#world-map-svg").find("#US"),
-    //                     $("svg#world-map-svg").find("#CN")
-    //                 ];
-    //         return arr;
-    //   };
-      var show = function(mapTl,inDef,arrCountry,noteText,isDoingClass){
+      var show = function(mapTl, inDef, arrCountry, noteText, isDoingClass){
               var def=$.Deferred();
               var arr=arrCountry;
               var getNoteArr=[];
@@ -17,7 +8,6 @@
                        o.attr("class",isDoingClass);
                      });
                      var jParent=$('.mdl-layout');
-                     
                      $.each(arr,function(i,obj){
                          getNoteArr = WorldMapAddNote.addNoteOnCountry(obj,jParent,getNoteArr,noteText,isDoingClass);
                      });
@@ -33,9 +23,9 @@
                         .set(getNoteArr,{visibility: "visible"})
                         .staggerFrom(getNoteArr,0.6,{opacity: 0,scaleX: 0.5},0.3)
                         .staggerTo(getNoteArr,0.6,{opacity: 0,scaleX: 0, delay: 3},0.3);  
-                 function allDone(){
+                 function allDone() { 
                     console.log("finished isDoing "+noteText+" ani");
-                    $.each(arr,function(i,o){
+                    $.each(arr,function(i,o) {  
                        o.attr("class", "world-map-svg__each");
                      });
                      $("[id*='-note-container']").remove();
