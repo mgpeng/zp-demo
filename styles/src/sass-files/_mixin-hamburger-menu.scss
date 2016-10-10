@@ -1,0 +1,62 @@
+// <div id="hamburger-menu" class="icon"></div>
+
+// .icon {
+//   width:1em;
+//   height:1em;
+//   @include nav_icon(100px, 80px, #fff);      /*(icon-width, icon-height, icon-color)*/
+// }
+
+// document.querySelector( "#hamburger-menu" )
+//   .addEventListener( "click", function() {
+//     this.classList.toggle( "is-active" );
+// });
+
+
+@mixin nav_icon($icon-width:20px, $icon-height:20px, $icon-color:#fff) {
+  display:inline-block;
+  position: relative;  
+  cursor: pointer;
+  text-align: center;   
+  background: $icon-color;
+  box-sizing:border-box;
+  background-clip: content-box; 
+  width: $icon-width;
+  height: $icon-height;
+  border-top:#{($icon-height - ($icon-height / 5)) / 2} solid transparent;
+  border-bottom:#{($icon-height - ($icon-height / 5)) / 2} solid transparent;
+  transform: rotate(0deg);
+  transition: all 0.2s ease-in-out;
+  
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    background: $icon-color;
+    height: ($icon-height / 5);
+    width: 100%;
+    left: 0;
+    transform: rotate(0deg);
+    transition: all 0.25s ease-in-out; 
+  }
+  &:before {
+    top: -#{($icon-height - ($icon-height / 5)) / 2}; 
+  }
+  &:after {
+    bottom: -#{($icon-height - ($icon-height / 5)) / 2}; 
+  }
+  @at-root .is-active {
+    background: transparent;
+    background-clip: content-box;    
+    
+    &:before {
+      transform: rotate(135deg);
+      top: 0; 
+    }
+    &:after {
+      bottom: 0;
+      transform: rotate(-135deg); 
+    }
+  }
+}
+
+
+
