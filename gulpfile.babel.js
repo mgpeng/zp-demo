@@ -285,5 +285,5 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
 // git add dist && git commit -m "Initial dist subtree commit"
 // git subtree push --prefix dist origin gh-pages
 
-
+//  git checkout master
 //  git push origin `git subtree split --prefix dist gh-pages`:gh-pages --force
