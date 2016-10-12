@@ -3,6 +3,8 @@
 @import "src/_include-media";
 @import "src/_flex";
 @import "src/_mixin-transition";
+@import 'src/_bg-img-linear-gradient';
+@import 'src/_generic-transform';
 
 //----import map
 @import "_demo-header__map";
@@ -21,15 +23,19 @@
 @import "_warning-bug";
 // --- add logo
 @import "_add-logo";
+// -- add live-auction
+@import "_live-auction";
+@import "_itemsline";
+
 
 
 //---------below header part 
 
 .mdl-layout__header{
-     transition:background 0.3s;
+     transition: background 0.3s;
      background-image: url('../images/material-design-bg-37-t.jpg');
-     background-size:cover;
-     background-position:center;
+     background-size: cover;
+     background-position: center;
 
   @include flexbox;
   @include flex-direction(column);
