@@ -40,7 +40,42 @@ const reload = browserSync.reload;
 // Lint JavaScript
 gulp.task('lint', () =>
   gulp.src('app/scripts/my-js/*.js')
-    .pipe($.eslint())
+    .pipe($.eslint({
+			rules: {
+				'no-alert': 0,
+				'no-bitwise': 0,
+				'camelcase': 1,
+				'curly': 1,
+				'no-eq-null': 0,
+				'guard-for-in': 1,
+				'no-empty': 1,
+				'no-use-before-define': 0,
+				'no-obj-calls': 2,
+				'no-unused-vars': 0,
+				'new-cap': 1,
+				'no-shadow': 0,
+				'strict': 2,
+				'no-invalid-regexp': 2,
+				'comma-dangle': 2,
+        'comma-spacing':1,
+				'no-undef': 1,
+				'no-new': 1,
+				'no-extra-semi': 1,
+				'no-debugger': 2,
+				'no-caller': 1,
+				'semi': 1,
+				'quotes': 1,
+				'no-unreachable': 2,
+        'eqeqeq': 2,
+        'indent':0,
+        'space-before-keywords':1,
+        'space-infix-ops':1,
+        'key-spacing':1,
+        'max-len':1,
+        'no-trailing-spaces':1,
+        'space-before-blocks':1
+			}
+		}))
     .pipe($.eslint.format())
     .pipe($.if(!browserSync.active, $.eslint.failOnError()))
 );

@@ -45,5 +45,16 @@
   },
   "dependencies": {
     "hover.css": "^2.0.2"
+  },
+  "stylelint":{
+    "rules": {
+              "block-no-empty": null,
+              "color-no-invalid-hex": true,
+              "comment-empty-line-before": [ "always", {
+                "ignore": ["stylelint-commands", "between-comments"]
+                } ],
+              "max-empty-lines": 2,
+              "unit-whitelist": ["em", "rem", "%", "s","px"]
+           }
   }
 }
