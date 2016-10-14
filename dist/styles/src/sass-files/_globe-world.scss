@@ -1,0 +1,33 @@
+.globe-world-container {
+  &.globe-world__isHidden{
+     display:none;
+  }
+  border: 2px solid #8bc34a;
+  border-radius: 50%;
+  height: 100px;
+  left: 5%;
+  overflow: hidden;
+  position: absolute;
+  top: 5%;
+
+  transform: translate(-50%, -50%);
+  width: 100px;
+  
+  svg {
+    animation: rotation 5s linear 0s infinite;
+    
+    path {
+      stroke: #8BC34A;
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: translateX(0);
+  }
+  
+  from {
+    transform: translateX(-50%);
+  }
+}

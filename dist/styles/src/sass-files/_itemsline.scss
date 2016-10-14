@@ -10,11 +10,13 @@ Main Components
 -------------------------------- */
 
 .cd-horizontal-timeline {
-	height: 60px;
+	height: 50px;
 	opacity: 0;
     width: 100%;
+	background-color: #020202;
+	margin: 0 !important;
 	@include transition(opacity .2s);
-
+   
 	&::before {
 		/* never visible - this is used in jQuery to check the current MQ */
 		content: 'mobile';
@@ -53,12 +55,12 @@ Main Components
 
 		&::before {
 			left: 0;
-	    	@include linear-gradient(to right,$color-4, rgba($color-4, 0));
+	    	@include linear-gradient(to right,#020202, rgba(#020202, 0));
 		}
 
 		&::after {
 			right: 0;
-			@include linear-gradient(to left,$color-4, rgba($color-4, 0));
+			@include linear-gradient(to left,#020202, rgba(#020202, 0));
 		}
 	}
 
@@ -67,8 +69,8 @@ Main Components
 		position: absolute;
 		z-index: 1;
 		left: 0;
-		top: 30px;
-		height: 6px;
+		top: 33px;
+		height: 3px;
 		/* width will be set using JavaScript */
 		background: darken($color-4, 10%);
 		@include transition(transform .4s);
@@ -85,7 +87,7 @@ Main Components
 		top: 0;
 		height: 100%;
 		width: 100%;
-		background-color: $color-2;
+		background-color:unquote("rgb(#{$palette-teal-900})");
 		transform:scaleX(0);
 		@include transform-origin(left center);
 		@include transition(transform .3s);
@@ -98,8 +100,8 @@ Main Components
 		text-align: center;
 		text-decoration: none;
 		font-size: 0.7em;
-		padding-bottom: 5px;
-		color: $color-1;
+		padding-bottom: 10px;
+		color: unquote("rgb(#{$palette-grey-100})");
 		/* fix bug on Safari - text flickering while timeline translates */
 		transform : translateZ(0);
 
@@ -108,11 +110,11 @@ Main Components
 			content: '';
 			position: absolute;
 			@include center(x);
-			bottom: -5px;
-			height: 12px;
-			width: 12px;
+			bottom: -6px;
+			height: 9px;
+			width: 9px;
 			border-radius: 50%;
-			border: 2px solid darken($color-4, 10%);
+			border: 2px solid unquote("rgb(#{$palette-grey-200})");
 			background-color: $color-4;
 			@include transition(background-color .3s, border-color .3s);
 		}
@@ -152,11 +154,12 @@ ul.cd-timeline-navigation{
 	/* these are the left/right arrows to navigate the timeline */
 	position: absolute;
 	z-index: 1;
-	@include center(y);
+	// @include center(y);
+	top:26%;
 	height: 24px;
 	width: 24px;
 	border-radius: 50%;
-	border: 2px solid darken($color-4, 40%);
+	border: 2px solid darken($color-4, 10%);
 	/* replace text with an icon */
 	overflow: hidden;
 	color: transparent;
@@ -203,12 +206,12 @@ ul.cd-timeline-navigation{
 	}
 }
 .live-auction__main .mdl-card__supporting-text{
-  margin:0.7em;
+  margin:0.7em auto ! important;
 }
 .itemsline-event-content-container .events-content {
 	position: relative;
 	width: 100%;
-	overflow-y: scroll;
+	overflow-y: hidden;
 	overflow-x: hidden;
 	@include transition(height .4s);
     & ol{
@@ -224,7 +227,7 @@ ul.cd-timeline-navigation{
 		left: 0;
 		top: 0;
 		transform: translateX(-100%);
-		padding: 0 5%;
+		padding: 0;
 		opacity: 0;
 		animation-duration: .4s;
 		animation-timing-function: ease-in-out;
@@ -261,6 +264,11 @@ ul.cd-timeline-navigation{
 		font-family: $secondary-font;
 		font-weight: 700;
 		line-height: 1;
+		& span.itemsline__items-status{
+			font-size: 0.45em;
+			color:red;
+			margin-left: 10px;
+		}
 	}
 
 	em {
@@ -272,10 +280,13 @@ ul.cd-timeline-navigation{
 			content: '- ';
 		}
 	}
-	.itemslin-img-container{
+	.itemsline-img-container{
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		background-color: rgba(128, 128, 128, 0.11);
 		& img.itemsline-img{
 			width:40px;
 			height:40px;
@@ -288,7 +299,7 @@ ul.cd-timeline-navigation{
 		font-size: 0.5em;
 		color: shade($color-4, 40%);
 		margin-left: auto;
-		margin-right: auto;
+		margin-bottom: auto;
 		margin-top: 5px;
 	}
 
@@ -336,3 +347,22 @@ ul.cd-timeline-navigation{
 		transform:translateX(0%);
 	}
 }
+
+
+// --- below bidders container
+    #live-auction .live-auction__bidder__isOnline{
+            padding: 5px;
+            & .live-auction__bidder__header{
+                font-size: 0.85em;
+            }
+            & .live-auction__bidder.live-auction__s-avatar{
+                width: 1.5em;
+                height: 1.5em;
+                border-radius: 50%;
+                padding:0;
+                margin: 5px;
+            }
+            & .live-auction__bidder__more{
+                font-size: 0.6em;
+            }
+        }
