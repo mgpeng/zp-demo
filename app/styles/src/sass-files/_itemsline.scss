@@ -3,35 +3,6 @@
 @import 'timeline-import/_mixins'; // custom mixins
 @import 'timeline-import/_layout'; // responsive grid and media queries
 
-
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-
-// *, *::after, *::before {
-// 	box-sizing: border-box;
-// }
-
-// html {
-// 	font-size: 62.5%;
-// }
-
-// body {
-// 	font: {
-// 		size: 1.6rem;
-// 		family: $primary-font; // variables inside partials > _variables.scss
-// 	}
-// 	color: $color-1;
-// 	background-color: $color-4;
-// }
-
-// a {
-// 	color: $color-2;
-// 	text-decoration: none;
-// }
-
 /* -------------------------------- 
 
 Main Components 
@@ -39,10 +10,12 @@ Main Components
 -------------------------------- */
 
 .cd-horizontal-timeline {
+	height: 60px;
 	opacity: 0;
-	margin: 2em auto;
+    width: 100%;
+	background-color: #607d8b;
 	@include transition(opacity .2s);
-
+   
 	&::before {
 		/* never visible - this is used in jQuery to check the current MQ */
 		content: 'mobile';
@@ -56,17 +29,18 @@ Main Components
 
 	.timeline {
 		position: relative;
-		height: 100px;
+		height: 50px;
 		width: 90%;
-		max-width: 800px;
 		margin: 0 auto;
 	}
 
 	.events-wrapper {
 		position: relative;
-		height: 100%;
-		margin: 0 40px;
+		height: 50px;
+		width: 78%;
 		overflow: hidden;
+		margin-left: auto;
+		margin-right: auto;
 
 		&::after, &::before {
 			/* these are used to create a shadow effect at the sides of the timeline */
@@ -94,11 +68,14 @@ Main Components
 		position: absolute;
 		z-index: 1;
 		left: 0;
-		top: 49px;
-		height: 2px;
+		top: 30px;
+		height: 6px;
 		/* width will be set using JavaScript */
 		background: darken($color-4, 10%);
 		@include transition(transform .4s);
+		& ol{
+			list-style: none;
+		}
 	}
 
 	.filling-line {
@@ -109,7 +86,7 @@ Main Components
 		top: 0;
 		height: 100%;
 		width: 100%;
-		background-color: $color-2;
+		background-color:unquote("rgb(#{$palette-teal-300})");
 		transform:scaleX(0);
 		@include transform-origin(left center);
 		@include transition(transform .3s);
@@ -120,9 +97,10 @@ Main Components
 		bottom: 0;
 		z-index: 2;
 		text-align: center;
-		font-size: 1.3rem;
-		padding-bottom: 15px;
-		color: $color-1;
+		text-decoration: none;
+		font-size: 0.7em;
+		padding-bottom: 10px;
+		color: unquote("rgb(#{$palette-grey-100})");
 		/* fix bug on Safari - text flickering while timeline translates */
 		transform : translateZ(0);
 
@@ -135,7 +113,7 @@ Main Components
 			height: 12px;
 			width: 12px;
 			border-radius: 50%;
-			border: 2px solid darken($color-4, 10%);
+			border: 2px solid darken(unquote("rgb(#{$palette-grey-50})"), 10%);
 			background-color: $color-4;
 			@include transition(background-color .3s, border-color .3s);
 		}
@@ -160,7 +138,7 @@ Main Components
 	}
 
 	@include MQ(L) {
-		margin: 6em auto;
+		margin: 0.4em auto;
 		
 		&::before {
 			/* never visible - this is used in jQuery to check the current MQ */
@@ -168,36 +146,40 @@ Main Components
 		}
 	}
 }
-
+ul.cd-timeline-navigation{
+	list-style: none;
+}
 .cd-timeline-navigation a {
 	/* these are the left/right arrows to navigate the timeline */
 	position: absolute;
 	z-index: 1;
 	@include center(y);
-	height: 34px;
-	width: 34px;
+	height: 24px;
+	width: 24px;
 	border-radius: 50%;
-	border: 2px solid darken($color-4, 10%);
+	border: 2px solid darken($color-4, 40%);
 	/* replace text with an icon */
 	overflow: hidden;
 	color: transparent;
 	text-indent: 100%;
 	white-space: nowrap;
 	@include transition(border-color .3s);
+	transform: translateY(0);   
+	// --  justify left nav always higher position than right nav
 	
 	&::after {
 		/* arrow icon */
 		content: '';
 		position: absolute;
 		height: 16px;
-		width: 16px;
+		width: 14px;
 		@include center;
-		background: url(../img/cd-arrow.svg) no-repeat 0 0;
+		background: url(../../images/cd-arrow.svg) no-repeat 0 0;
 	}
 
 	&.prev {
 		left: 0;
-		transform: translateY(-50%);
+		// transform: translateY(-50%);
 		transform: rotate( 180deg );
 	}
 
@@ -221,15 +203,22 @@ Main Components
 		}
 	}
 }
-
-.cd-horizontal-timeline .events-content {
+.live-auction__main .mdl-card__supporting-text{
+  margin:0.7em;
+}
+.itemsline-event-content-container .events-content {
 	position: relative;
 	width: 100%;
-	margin: 2em 0;
-	overflow: hidden;
+	overflow-y: scroll;
+	overflow-x: hidden;
 	@include transition(height .4s);
-
+    & ol{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
 	li {
+		list-style: none;
 		position: absolute;
 		z-index: 1;
 		width: 100%;
@@ -263,16 +252,16 @@ Main Components
 	}
 	
 	li > * {
-		max-width: 800px;
+		max-width: 300px;
 		margin: 0 auto;
 	}
 
 	h2 {
 		font-weight: bold;
-		font-size: 2.6rem;
+		font-size: 1.6em;
 		font-family: $secondary-font;
 		font-weight: 700;
-		line-height: 1.2;
+		line-height: 1;
 	}
 
 	em {
@@ -284,28 +273,42 @@ Main Components
 			content: '- ';
 		}
 	}
-
+	.itemslin-img-container{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		& img.itemsline-img{
+			width:40px;
+			height:40px;
+			border-radius: 3px;
+			margin: 5px;
+		}
+	}
+    
 	p {
-		font-size: 1.4rem;
+		font-size: 0.5em;
 		color: shade($color-4, 40%);
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 5px;
 	}
 
 	em, p {
-		line-height: 1.6;
+		line-height: 1.1;
 	}
 
 	@include MQ(M) {
 
 		h2 {
-			font-size: 7rem;
+			font-size: 1.6em;
 		}
 
 		em {
-			font-size: 2rem;
+			font-size: 1rem;
 		}
 
 		p {
-			font-size: 1.8rem;
+			font-size: 0.8rem;
 		}
 	}
 	

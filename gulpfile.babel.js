@@ -73,7 +73,8 @@ gulp.task('lint', () =>
         'key-spacing':1,
         'max-len':1,
         'no-trailing-spaces':1,
-        'space-before-blocks':1
+        'space-before-blocks':1,
+        'dot-notation':0
 			}
 		}))
     .pipe($.eslint.format())
@@ -321,7 +322,7 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
 // 2)git remote add http...  to connect local project folder to this new remote repo
 // 3)git push -u origin master  to upload local to remote 
 // 4)  git checkout master
-// 5) git add dist && git commit -m "Initial dist subtree commit"
+// 5) git add dist && git commit -m "update dist Oct 1"
 // 6) git subtree push --prefix dist origin gh-pages
 
 
