@@ -49,7 +49,7 @@ jQuery(document).ready(function($){
 	var jPLine=$('.cd-horizontal-timeline'),
 	jPEventContent=$('.live-auction__main').find('.mdl-card__supporting-text'),
 	itemNum=20;
-	var eventsMinDistance = 35;
+	var eventsMinDistance = 45;
 	insertItemsline(jPLine,jPEventContent,dataMock, itemNum);
 	setTimeout(function(){
 	var timelines = $('.cd-horizontal-timeline');
@@ -362,8 +362,11 @@ function createItemslineString(dataMock,itemsNum) {
 				'<li><a href="#0" data-date="'+dataMock[obj].itemNo+'" class="'+(ind === 0 ? "selected" : "") +'">'+dataMock[obj].shortName+'</a></li>';
             middleStr2 = middleStr2 +
 						'<li class="'+(ind === 0 ? "selected" : "") +'" data-date="'+dataMock[obj].itemNo+'">'+
-							'<h2>'+dataMock[obj].shortName+'<em>即将拍</em></h2>' +	
-							'<div class="itemslin-img-container">' +
+							'<h2>'+dataMock[obj].shortName+'<span class="itemsline__items-status itemsline__items-status__willBid">即将拍</span></h2>' +	
+							'<div class="itemsline-img-container">' +
+							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[0]+'" />' +
+							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[1]+'" />' +
+							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[2]+'" />' +  
 							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[0]+'" />' +
 							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[1]+'" />' +
 							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[2]+'" />' +  
@@ -375,9 +378,11 @@ function createItemslineString(dataMock,itemsNum) {
 }
 
 function insertItemsline(jParent1,jParent2,dataMock,itemNum){
-	var str = createItemslineString(dataMock,itemNum);
-	$(jParent1).prepend(str[0]);
-	$(jParent2).prepend(str[1]);
+	if (!jParent1.find('.timeline').length>0 && !jParent2.find('.event-contents').length>0){
+		var str = createItemslineString(dataMock,itemNum);
+		$(jParent1).prepend(str[0]);
+		$(jParent2).prepend(str[1]);
+	}
 }
 });
 
