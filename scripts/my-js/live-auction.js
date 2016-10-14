@@ -73,12 +73,12 @@ var LiveAuction=(function(){
         var findOne=$('.live-auction__items-container').find('.live-auction__item:nth-child('+defaultInd+')');
         findOne.addClass('isBidding');
     };
-    var insertBiddingItems = function(jParent) {
+    var insertBiddingItems = function(jBefore) {
         var el=createEl(18);
-        if (jParent.siblings('.live-auction__items-container').length>0){
+        if (jBefore.siblings('.live-auction__items-container').length>0){
             console.log('already insert live-auction container');
         } else {
-            $(el).insertAfter(jParent);
+            $(el).insertAfter(jBefore);
             changeToIsBidding();
         }
     };
