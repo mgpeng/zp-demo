@@ -14,6 +14,12 @@
      margin-left: 1em;
      margin-right: 2em;
      z-index:10;
+     transition:transform 0.5s,background-color 0.5s;
+     &.shrink-color-ani{
+         transform:scale(0.9);
+         transform-origin: center center;
+         background-color: grey;
+     }
 }
 .mdl-layout__header .header-text{
      margin-top: 6px;    //-------add this because it always a little bit up, so let it down a little

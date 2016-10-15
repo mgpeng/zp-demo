@@ -17,9 +17,13 @@
     align-items: center;
     z-index: 1;
     overflow:hidden;
+    transition:height 0.7s;
     & svg{
         width: 900px;
         height: 600px;
+    }
+    &.shrink{
+        height:1px;
     }
 }
 //-------below inside svg

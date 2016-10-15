@@ -105,7 +105,6 @@ var MapActiveMenu = (function(){
         activeTl.add(tl);
         function doneAni(){
             def.resolve();
-            console.log("done map-active-menu");
         }
     };
     return {

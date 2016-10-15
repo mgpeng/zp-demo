@@ -117,46 +117,64 @@ var cnt= $(" .mdl-layout__header ").find(" .header-search__container ");
         });});
 //  ---below scroll up and down
         var initScrollTop=0;
-        debugger;
-        $('main').on('scroll', function(e){
-                console.log("scroll event happend");
+        var header=$('.mdl-layout__header');
+        var textserachlogo=header.find('header-text-search-container');
+        var map=$('.header-up-part-container')
+                    .find('.map-container');
+        var activeMenu=$('.header-up-part-container')
+                    .find('.map-active-menu');
+        var tabCnt=$('.mdl-layout__header')
+                    .find('.mdl-layout__tab-bar-container');
+        $('main').on('scroll', function(){
                 var that=$(this)[0];
                 var currntScrollTop=that.scrollTop;
                 var diff = currntScrollTop-initScrollTop;
-                var tsCnt=$('.header-up-part-container')
-                          .find('.header-text-search-container');
-                var header=$('.mdl-layout__header');
                 var tabletWidth = 768;
                 var isLessTablet=$(window).outerWidth() <= 768 ? true : false;
                 if (currntScrollTop > initScrollTop) {
-                       console.log("scroll up");
-                       header.addClass('is-bg-changed');
-                       tsCnt.css('opacity','0');
-                       $.getScript("./scripts/my-js/globe-world.js",function(){
-                           debugger;
-                           var p=$('main.mdl-layout__content');
-                           GlobeWorld.doShow(p);
-                       });
+                    // debugger;
+                            header.addClass('is-bg-changed');
+                            map.addClass('shrink');
+                            activeMenu.addClass('shrink');
+                            tabCnt.addClass('go-up');
+                            textserachlogo.addClass('shrink-color-ani');
+                            $.getScript("./scripts/my-js/globe-world.js",function(){
+                                var p=$('main.mdl-layout__content');
+                                GlobeWorld.doShow(p);
+                            });
+                    isFirstScrollup=false;  
                        if (isLessTablet){
-                           $(this).animate({'margin-top':'-1px'},500,function(){});  
+                           $(this).animate({'margin-top':'-1'},500,function(){});  
                            // --- -51px have bad looking in safari and firefox
                        }
                 }else {
-                    console.log("scroll down");
-                    if (currntScrollTop<8) {
-                         header.removeClass('is-bg-changed');
-                         tsCnt.animate({opacity:1},500,function(){
+                     if (currntScrollTop<100) {
+                            header.removeClass('is-bg-changed');
+                            map.removeClass('shrink');
+                            activeMenu.removeClass('shrink');
+                            tabCnt.removeClass('go-up');
+                            textserachlogo.removeClass('shrink-color-ani');
                          $.getScript("./scripts/my-js/globe-world.js",function(){
-                            debugger;
-                            var p=$('main.mdl-layout__content');
-                            GlobeWorld.doHide(p);
-                         });
-                         });
+                                    var p=$('main.mdl-layout__content');
+                                    GlobeWorld.doHide(p);
+                                });
                          if (isLessTablet){
                             $(this).animate({'margin-top':'0px'},500,function(){});
                          }
-                    }
+                     }
                 }
+                console.log ("currntScrollTop4:"+currntScrollTop);
                 initScrollTop=that.scrollTop;
         });
 //  ---above scroll up and down
+
+  var _once = function(func) {
+    var ran = false, memo;
+    return function() {
+      if (ran) return memo;
+      ran = true;
+      memo = func.apply(this, arguments);
+      func = null;
+      return memo;
+    };
+  };
