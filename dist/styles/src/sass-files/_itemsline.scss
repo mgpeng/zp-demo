@@ -366,3 +366,14 @@ ul.cd-timeline-navigation{
                 font-size: 0.6em;
             }
         }
+// ----- below chat
+.live-auction__chat-icon{
+	& span.live-auction__chat__title{
+		font-size:0.85em;
+		color:black;
+		text-align: center;
+	}
+	& i.material-icons{
+		color: black;
+	}
+}

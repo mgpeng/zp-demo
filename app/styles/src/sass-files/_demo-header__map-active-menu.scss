@@ -7,10 +7,14 @@
 
 
 .header-up-part-container .map-active-menu{
+    transition:height 0.7s;
     height: 1.8em;
     margin: auto;
     width: 53em;
     padding: 0;
+    &.shrink{
+        height:1px;
+    }
  & .map-active-menu__container{
     visibility: hidden;
     @include flexbox;

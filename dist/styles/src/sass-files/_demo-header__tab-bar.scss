@@ -7,6 +7,13 @@
      @include flexbox;
      @include flex-direction(row);
      @include justify-content(center);
+     top:0;
+     transition: transform 0.5s, top 0.5s;
+     &.go-up{
+       top:20px;
+       transform: scale(0.85);
+       transform-origin: center center;
+     }
 }
 .mdl-layout__header .mdl-layout__tab-bar-container .mdl-layout__tab-bar-button {
   display: none;

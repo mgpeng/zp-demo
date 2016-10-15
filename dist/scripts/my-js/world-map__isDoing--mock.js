@@ -24,7 +24,6 @@
                         .staggerFrom(getNoteArr,0.6,{opacity: 0,scaleX: 0.5},0.3)
                         .staggerTo(getNoteArr,0.6,{opacity: 0,scaleX: 0, delay: 3},0.3);  
                  function allDone() { 
-                    console.log("finished isDoing "+noteText+" ani");
                     $.each(arr,function(i,o) {  
                        o.attr("class", "world-map-svg__each");
                      });
