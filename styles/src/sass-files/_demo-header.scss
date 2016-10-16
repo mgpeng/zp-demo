@@ -38,7 +38,7 @@
     @include flex-direction(column);
     @include justify-content(center);
     &.is-bg-changed{
-        background: #646b6c ;
+        background: red !important;
         @include media('<=tablet') {
             transition:width 0.6s,background 0.6s;
             &{
