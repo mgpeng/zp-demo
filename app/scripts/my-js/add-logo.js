@@ -49,12 +49,12 @@ var AddLogo = (function(){
             ease:Power4.easeInOut,
             alpha:0
             }, 0.2, '-=2.5')
-            .staggerFrom( '#right path', 2, {
+            .staggerFrom('#right path', 2, {
             drawSVG:"100% 100%",
             ease:Power4.easeInOut,
             alpha:0
             }, 0.2, '-=2.5')
-            .staggerFrom( '#left path', 2, {
+            .staggerFrom('#left path', 2, {
             drawSVG:"100% 100%",
             ease:Power4.easeInOut,
             alpha:0
