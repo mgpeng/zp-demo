@@ -46,7 +46,8 @@ var WorldMapAddNote=(function(){
                         '<span class="world-map-note__'+isDoingClass+'-buyer">'+note.buyerNum+'<span class="xs-font-size">竞拍人</span></span>'+
                   '</div>';
       var pos=getCountryPosition(jEl);
-      var top=Math.round(pos.top+pos.width/3)+'px',
+      var offTop=$('.header-up-part-container').find('.header-text-search-container').height();
+      var top=Math.round(pos.top+pos.width/3-offTop)+'px',
           left=Math.round(pos.left+pos.height/3)+'px';
       $(noteStr).appendTo(jParent).css({
         top: top,left: left,visibility: 'hidden'

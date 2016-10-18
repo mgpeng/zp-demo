@@ -118,46 +118,57 @@ var cnt= $(" .mdl-layout__header ").find(" .header-search__container ");
 //  ---below scroll up and down
         var initScrollTop=0;
         var header=$('.mdl-layout__header');
-        var textserachlogo=header.find('header-text-search-container');
+        var textserachlogo=header.find('.header-text-search-container');
         var map=$('.header-up-part-container')
                     .find('.map-container');
-        var activeMenu=$('.header-up-part-container')
-                    .find('.map-active-menu');
+        // var activeMenu=$('.header-up-part-container')
+        //             .find('.map-active-menu');
         var tabCnt=$('.mdl-layout__header')
                     .find('.mdl-layout__tab-bar-container');
+        // var tabletWidth = 768;
+        var isLessTablet=$(window).outerWidth() <= 768 ? true : false;
+        
         $('main').on('scroll', function(){
                 var that=$(this)[0];
                 var currntScrollTop=that.scrollTop;
-                var diff = currntScrollTop-initScrollTop;
-                var tabletWidth = 768;
-                var isLessTablet=$(window).outerWidth() <= 768 ? true : false;
+                var i=0,j=0;
                 if (currntScrollTop > initScrollTop) {
-                    // debugger;
+                    if (currntScrollTop<60) {
+                        i++;
+                        console.log('down from beginning done time:'+i);
                             header.addClass('is-bg-changed');
                             map.addClass('shrink');
-                            activeMenu.addClass('shrink');
+                            // activeMenu.addClass('shrink');
                             tabCnt.addClass('go-up');
-                            textserachlogo.addClass('shrink-color-ani');
+                            // textserachlogo.addClass('shrink-color-ani');
                             $.getScript("./scripts/my-js/globe-world.js",function(){
                                 var p=$('main.mdl-layout__content');
                                 GlobeWorld.doShow(p);
                             });
-                    isFirstScrollup=false;  
-                       if (isLessTablet){
-                           $(this).animate({'margin-top':'-1'},500,function(){});  
-                           // --- -51px have bad looking in safari and firefox
-                       }
+                            $('body').trigger('hideAcitveMenuAndAni');
+                            $('.mdl-layout').trigger('hideMapNoteAndAni');
+                            $('.mdl-layout__header').trigger('scrollDownHideTextSplitLogoAndSearch');
+                            if (isLessTablet){
+                                $(this).animate({'margin-top':'-1'},500,function(){});  
+                                // --- -51px have bad looking in safari and firefox
+                            }
+                    }
                 }else {
-                     if (currntScrollTop<100) {
+                     if (currntScrollTop<60) {
+                          j++;
+                        console.log('up to top done time:'+j);
                             header.removeClass('is-bg-changed');
                             map.removeClass('shrink');
-                            activeMenu.removeClass('shrink');
+                            // activeMenu.removeClass('shrink');
                             tabCnt.removeClass('go-up');
-                            textserachlogo.removeClass('shrink-color-ani');
-                         $.getScript("./scripts/my-js/globe-world.js",function(){
+                            // textserachlogo.removeClass('shrink-color-ani');
+                            $.getScript("./scripts/my-js/globe-world.js",function(){
                                     var p=$('main.mdl-layout__content');
                                     GlobeWorld.doHide(p);
                                 });
+                            $('body').trigger('showAcitveMenuAndAni');
+                            $('.mdl-layout').trigger('showMapNoteAndAni');
+                            $('.mdl-layout__header').trigger('scrollUpToOrigin');
                          if (isLessTablet){
                             $(this).animate({'margin-top':'0px'},500,function(){});
                          }

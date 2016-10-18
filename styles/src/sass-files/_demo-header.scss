@@ -25,7 +25,9 @@
 @import "_add-logo";
 // -- add live-auction
 @import "_live-auction";
+// -- below two with _live-auction togather
 @import "_itemsline";
+@import "_live-auction__bidders-chat";
 
 // ---------below header part 
 .mdl-layout__header{
@@ -33,12 +35,12 @@
      background-image: url('../images/material-design-bg-37-t.jpg');
      background-size: cover;
      background-position: center;
-
     @include flexbox;
     @include flex-direction(column);
     @include justify-content(center);
     &.is-bg-changed{
-        background: red !important;
+        // background-image: unquote("rbg(#{$palette-teal-A400})") !important;
+        background-image:none !important;
         @include media('<=tablet') {
             transition:width 0.6s,background 0.6s;
             &{
