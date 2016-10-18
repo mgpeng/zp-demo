@@ -28,7 +28,7 @@ var AddLogo = (function(){
                         '</g>'+
                     '</svg>';
         svgStr='<div class="logo-container">'+svgStr+'</div>';
-        $(svgStr).appendTo(jParent);
+        jParent.prepend(svgStr);
     };
     var prepareAni = function(){
             TweenMax.set('.triangle', {
@@ -38,6 +38,7 @@ var AddLogo = (function(){
             visibility:'visible'
             })
             var tl = new TimelineMax({repeat:-1, repeatDelay:1});
+            
             tl.timeScale(6);
             tl.to('.triangle', 3, {
             rotation:'-=120',

@@ -350,30 +350,3 @@ ul.cd-timeline-navigation{
 
 
 // --- below bidders container
-    #live-auction .live-auction__bidder__isOnline{
-            padding: 5px;
-            & .live-auction__bidder__header{
-                font-size: 0.85em;
-            }
-            & .live-auction__bidder.live-auction__s-avatar{
-                width: 1.5em;
-                height: 1.5em;
-                border-radius: 50%;
-                padding:0;
-                margin: 5px;
-            }
-            & .live-auction__bidder__more{
-                font-size: 0.6em;
-            }
-        }
-// ----- below chat
-.live-auction__chat-icon{
-	& span.live-auction__chat__title{
-		font-size:0.85em;
-		color:black;
-		text-align: center;
-	}
-	& i.material-icons{
-		color: black;
-	}
-}

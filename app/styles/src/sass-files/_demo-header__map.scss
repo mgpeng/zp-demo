@@ -8,6 +8,7 @@
 
 //----------below map
 .header-up-part-container .header-space.map-container{
+    position:relative;
     height:15em;
     margin: 0;
     padding: 0;
@@ -21,13 +22,25 @@
     & svg{
         width: 900px;
         height: 600px;
+        // position:absolute;
+        // top: -200px;
+        // left: -50px;
     }
     &.shrink{
-        height:1px;
+        height:0px;
+    }
+    & .map-notes-container{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:transparent;
     }
 }
 //-------below inside svg
     .world-map-svg__each{
+
         transition: fill 0.5s ease-out;
         fill: unquote("rgb(#{$palette-cyan-300})");
         fill-opacity: 0.1;

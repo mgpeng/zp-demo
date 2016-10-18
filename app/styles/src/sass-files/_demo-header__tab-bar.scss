@@ -10,7 +10,10 @@
      top:0;
      transition: transform 0.5s, top 0.5s;
      &.go-up{
-       top:20px;
+       width: 80%;
+       margin-left: auto;
+       margin-right: auto;
+       top:-35px;
        transform: scale(0.85);
        transform-origin: center center;
      }

@@ -1,0 +1,46 @@
+#live-auction .live-auction__social-container{
+    height:1px;
+    background-color: black;
+    transition: height 0.6s;
+    color:white;
+    &.showAni{
+        height: 3.5em;
+    }
+    & .live-auction__bidder__isOnline{
+        opacity:0;
+        transition: opacity 0.6s;
+        padding: 5px;
+        &.showAni__bidder{
+            opacity:1;
+        }
+        & .live-auction__bidder__header{
+            font-size: 0.85em;
+        }
+        & .live-auction__bidder.live-auction__s-avatar{
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 50%;
+            padding:0;
+            margin: 5px;
+        }
+        & .live-auction__bidder__more{
+            font-size: 0.6em;
+        }
+    }
+    & .live-auction__chat-icon{
+        opacity:0;
+        transition: opacity 0.6s;
+        &.showAni__chat{
+            opacity:1;
+        }
+        & span.live-auction__chat__title{
+            font-size:0.85em;
+            color:white;
+            text-align: center;
+        }
+        & i.material-icons{
+            color: white;
+        }
+    }
+}
+// ----- below chat

@@ -1,5 +1,4 @@
 var MapActiveMenu = (function(){
-    
     var activeMenuMock = function(){
         var mockArr={
             'bidderJoinBid':[ 
@@ -80,7 +79,7 @@ var MapActiveMenu = (function(){
          }
          return arr;
     };
-    var makeOneActiveMenu=function(){
+    var makeOneActiveMenu = function(){
         var jParent= $(".header-up-part-container").find(".map-active-menu");
         var amc=randomChangeText();
         var randomUrl=randomChangeAvatarOrLogo();
@@ -92,10 +91,10 @@ var MapActiveMenu = (function(){
                         '<span class="map-active-menu__text">'+obj.actChinese+'</span>'+
                     '</div>';
         });
-       str=str+'</div>';
+       str = str+'</div>';
         $(str).appendTo(jParent);
     };
-    var ani=function(activeTl,def){
+    var ani = function(activeTl){
         makeOneActiveMenu();
         var cnt= $('.map-active-menu__container');
         var items= cnt.find('.map-active-menu__item');
@@ -103,11 +102,24 @@ var MapActiveMenu = (function(){
         tl.set(cnt,{visibility:'visible',position:'relative'})
                 .staggerFrom(items,0.5,{opacity:0,scal:0.5,top:60,delay:2,onComplete:doneAni},0.1);
         activeTl.add(tl);
-        function doneAni(){
-            def.resolve();
-        }
+        function doneAni(){}
+    };
+    var subEvent = function(activeTl){
+        $('body').on('hideAcitveMenuAndAni',function(){
+            var jParent= $(".header-up-part-container").find(".map-active-menu");
+            jParent.find('.map-active-menu__container').css({'opacity':'0'});
+            jParent.addClass('shrink');
+            activeTl.paused();
+        });
+        $('body').on('showAcitveMenuAndAni',function(){
+            var jParent= $(".header-up-part-container").find(".map-active-menu");
+            jParent.find('.map-active-menu__container').css({'opacity':'1'});
+            jParent.removeClass('shrink');
+            activeTl.play();
+        });
     };
     return {
-          ani:ani
+          ani:ani,
+          subEvent:subEvent
     };
 })();
