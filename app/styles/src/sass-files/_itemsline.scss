@@ -12,9 +12,10 @@ Main Components
 .cd-horizontal-timeline {
 	height: 50px;
 	opacity: 0;
-    width: 100%;
+    width: 100% !important;
 	background-color: #020202;
 	margin: 0 !important;
+	padding:0;
 	@include transition(opacity .2s);
    
 	&::before {
@@ -123,18 +124,21 @@ Main Components
 			background-color: $color-2;
 			border-color: $color-2;
 		}
-
 		&.selected {
 			pointer-events: none;
-
+			transform:scale(1.1);
+			transform-origin: -20% 10%;
+			color:red;
 			&::after {
 				background-color: $color-2;
 				border-color: $color-2;
+				transform:scale(1.1);
+				transform-origin: 500% 270%;
 			}
 		}
-
 		&.older-event::after {
 			border-color: $color-2;
+			background-color: transparent;
 		}
 	}
 
@@ -156,8 +160,8 @@ ul.cd-timeline-navigation{
 	z-index: 1;
 	// @include center(y);
 	top:26%;
-	height: 24px;
-	width: 24px;
+	height: 18px;
+	width: 18px;
 	border-radius: 50%;
 	border: 2px solid darken($color-4, 10%);
 	/* replace text with an icon */
@@ -205,12 +209,20 @@ ul.cd-timeline-navigation{
 		}
 	}
 }
-.live-auction__main .mdl-card__supporting-text{
+#live-auction .live-auction__main{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+	height:13.5em;
+	overflow-y: scroll;
+}
+#live-auction .live-auction__main .mdl-card__supporting-text{
   margin:0.7em auto ! important;
 }
 .itemsline-event-content-container .events-content {
 	position: relative;
 	width: 100%;
+	height: 10em;
 	overflow-y: hidden;
 	overflow-x: hidden;
 	@include transition(height .4s);

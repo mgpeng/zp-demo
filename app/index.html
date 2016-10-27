@@ -1,4 +1,6 @@
 <!doctype html>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <html lang="">
   <head>
     <meta charset="utf-8">
@@ -1733,38 +1735,50 @@ if it's not present, don't show loader */
                       <div class="live-auction__header__agent mdl-cell--middle">ABC Auction Co.</div>
                       <!--<div class="live-auction__header__location mdl-cell mdl-cell--2-col">纽约市51街</div>-->
                     </div>
-                    <div class="live-auction__header__catagory mdl-cell mdl-cell--2-col mdl-cell--middle">手表</div>
-                    <div class="live-auction__header__title mdl-cell mdl-cell--2-col mdl-cell--middle">正在拍的</div>
-                    <div class="live-auction__header__des mdl-cell mdl-cell--4-col mdl-cell--middle">还有50件拍品 马上拍!</div>
+                    <div class="live-auction__header__item-short-name mdl-cell mdl-cell--2-col mdl-cell--middle">手表</div>
+                    <div class="live-auction__header__items-status mdl-cell mdl-cell--2-col mdl-cell--bottom">正在拍</div>
+                    <!--<div class="live-auction__header__total-isWaiting-items mdl-cell mdl-cell--3-col mdl-cell--middle">还有50件拍品 马上拍!</div>-->
+                    <div class="live-auction__header__auctioneer-container mdl-cell mdl-cell--5-col mdl-cell--middle mdl-grid">
+                      <span class="live-auction__header__auctioneer__title mdl-cell mdl-cell--4-col mdl-cell--middle mdl-cell--2-offset">拍卖师</span>
+                      <div class="mdl-cell mdl-cell--6-col mdl-grid">
+                        <img class="live-auction__header__auctioneer__img mdl-cell mdl-cell--12-col mdl-cell--middle" src="./images/images-photos-icons/bridegroomIcon35x35.png" />
+                        <span class="live-auction__header__auctioneer__name mdl-cell mdl-cell--12-col mdl-cell--middle">Michael王</span>
+                       </div>
+                    </div>
                 </div>
-            <section class="cd-horizontal-timeline">
-            </section>       
             <div class="mdl-pg__decor-line-grey mdl-cell mdl-cell--12-col"></div>
-            
-              <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+            <div class="live-video-container mdl-cell mdl-cell--3-col">
+              <div class="main-live-video section__play-btn mdl-cell mdl-cell--12-col mdl-color--teal-100 mdl-color-text--white">
                 <i class="material-icons">play_circle_filled</i>
-              </header>
-            
-            <div class="live-auction__main mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-              <div class="itemsline-event-content-container mdl-card__supporting-text">   
-                <!--<h4>Features</h4>
-                Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.-->
+                <span>直播主视频</span>
               </div>
-              <div class="mdl-card__actions">
-                <a href="#" class="mdl-button">Read our features</a>
+              <div class="mdl-pg__decor-line-grey mdl-cell mdl-cell--12-col"></div>
+              <div class="all-degree-live-video section__play-btn mdl-cell mdl-cell--12-col mdl-color--teal-100 mdl-color-text--white">
+                <i class="material-icons">play_circle_filled</i>
+                <span>直播全景视频</span>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--9-col">
+              <section class="cd-horizontal-timeline mdl-cell mdl-cell--12-col">
+              </section>
+              <div class="live-auction__main mdl-card mdl-cell mdl-cell--12-col">
+                <div class="itemsline-event-content-container mdl-card__supporting-text">   
+                </div>
+                <div class="mdl-card__actions">
+                  <a href="#" class="mdl-button">Read our features</a>
+                </div>
               </div>
             </div>
             <div class="mdl-pg__decor-line-grey mdl-cell mdl-cell--12-col"></div>
             <div class="live-auction__social-container mdl-cell mdl-cell--12-col mdl-grid"></div>  
-            <!--<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn4">
-              <i class="material-icons">more_vert</i>
-            </button>-->
-            <!--<ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
-              <li class="mdl-menu__item">Lorem</li>
-              <li class="mdl-menu__item" disabled>Ipsum</li>
-              <li class="mdl-menu__item">Dolor</li>
-            </ul>-->
           </section>
+          <div class="live-bidding-chart-container">
+  <div class="bottom-unit-container">
+  <svg id="live-bidding-chart-svg" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   
+  <defs></defs>
+  </svg>
+  </div>
+</div>
         </div>
         <footer class="mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
@@ -1821,7 +1835,7 @@ if it's not present, don't show loader */
         </footer>
       </main>
     <!--</div>-->
-
+    
 
     <!--<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/chart.js/2.2.1/Chart.bundle.min.js"></script>
@@ -1901,14 +1915,17 @@ if it's not present, don't show loader */
               });
               $('a[href="#live-auction"]').on('click',function(){
                   console.log("cp1");
-//                  $.getScript("./scripts/my-js/live-auction.js", function() {
-//                     var jBefore=$('#live-auction').find('.live-auction__header');
-//                     LiveAuction.insertBiddingItems(jBefore);
-//                  });
+                  $.getScript("./scripts/my-js/live-auction.js", function() {
+                     LiveAuction.subEvent();
+                  });
                   $.getScript("./scripts/my-js/itemsline.js", function() {
+                      Itemsline.done();
                   });
                   $.getScript("./scripts/my-js/live-auction__bidders-chat.js", function() {
-                    LiveAuctionBiddersChat.done();
+                      LiveAuctionBiddersChat.done();
+                  });
+                  $.getScript("./scripts/my-js/live-bidding-chart.js", function() {
+                      LiveBiddingChart.addBottomUnits();
                   });
               });
               
