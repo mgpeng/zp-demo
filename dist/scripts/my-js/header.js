@@ -118,29 +118,20 @@ var cnt= $(" .mdl-layout__header ").find(" .header-search__container ");
 //  ---below scroll up and down
         var initScrollTop=0;
         var header=$('.mdl-layout__header');
-        var textserachlogo=header.find('.header-text-search-container');
         var map=$('.header-up-part-container')
                     .find('.map-container');
-        // var activeMenu=$('.header-up-part-container')
-        //             .find('.map-active-menu');
         var tabCnt=$('.mdl-layout__header')
                     .find('.mdl-layout__tab-bar-container');
         // var tabletWidth = 768;
         var isLessTablet=$(window).outerWidth() <= 768 ? true : false;
-        
         $('main').on('scroll', function(){
                 var that=$(this)[0];
                 var currntScrollTop=that.scrollTop;
-                var i=0,j=0;
                 if (currntScrollTop > initScrollTop) {
                     if (currntScrollTop<60) {
-                        i++;
-                        console.log('down from beginning done time:'+i);
                             header.addClass('is-bg-changed');
                             map.addClass('shrink');
-                            // activeMenu.addClass('shrink');
                             tabCnt.addClass('go-up');
-                            // textserachlogo.addClass('shrink-color-ani');
                             $.getScript("./scripts/my-js/globe-world.js",function(){
                                 var p=$('main.mdl-layout__content');
                                 GlobeWorld.doShow(p);
@@ -155,13 +146,9 @@ var cnt= $(" .mdl-layout__header ").find(" .header-search__container ");
                     }
                 }else {
                      if (currntScrollTop<60) {
-                          j++;
-                        console.log('up to top done time:'+j);
                             header.removeClass('is-bg-changed');
                             map.removeClass('shrink');
-                            // activeMenu.removeClass('shrink');
                             tabCnt.removeClass('go-up');
-                            // textserachlogo.removeClass('shrink-color-ani');
                             $.getScript("./scripts/my-js/globe-world.js",function(){
                                     var p=$('main.mdl-layout__content');
                                     GlobeWorld.doHide(p);
@@ -174,7 +161,6 @@ var cnt= $(" .mdl-layout__header ").find(" .header-search__container ");
                          }
                      }
                 }
-                console.log ("currntScrollTop4:"+currntScrollTop);
                 initScrollTop=that.scrollTop;
         });
 //  ---above scroll up and down
@@ -189,3 +175,23 @@ var cnt= $(" .mdl-layout__header ").find(" .header-search__container ");
       return memo;
     };
   };
+
+  // ---
+//   $(function(){
+// 	var $window = $('body');		// --this object is
+// 	var scrollTime = 1.2;			//Scroll time
+// 	var scrollDistance = 170;		//Distance. Use smaller value for shorter scroll and greater value for longer scroll
+	
+// 	$window.on("wheel", function(event){
+// 		event.preventDefault();	
+// 		var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+// 		var scrollTop = $window.scrollTop();
+// 		var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+// 		TweenMax.to($window, scrollTime, {
+// 			scrollTo : { y: finalScroll, autoKill:true },
+// 				ease: Power1.easeOut,	//For more easing functions see http://api.greensock.com/js/com/greensock/easing/package-detail.html
+// 				autoKill: true,
+// 				overwrite: 5							
+// 			});
+// 	});
+//  });

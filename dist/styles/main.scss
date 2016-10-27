@@ -21,19 +21,28 @@ will be correctly compiled during `gulp serve` and `gulp`
 @import "src/material-design-lite";
 @import "src/_include-media";
 @import "src/_flex";
+@import "src/_mixin-transition";
+@import 'src/_bg-img-linear-gradient';
+@import 'src/_generic-transform';
 // --- generic decor line 
 @import "src/sass-files/_mdl-pg-generic-decor";
 //------below split first page scss to few scss files
 @import "src/sass-files/_demo-header";
-//------above split first page scss to few scss files
-
-// @import 'https://fonts.useso.com/css?family=Cookie|Great+Vibes|Monoton|Rochester';
-
-// usage
-// font-family: 'Cookie', cursive;
-// font-family: 'Great Vibes', cursive;
-// font-family: 'Rochester', cursive;
-// font-family: 'Monoton', cursive;
+// --below add live-auction page
+@import "src/sass-files/_live-auction";
+// -- below two with _live-auction togather
+@import "src/sass-files/_itemsline";
+@import "src/sass-files/_live-auction__bidders-chat";
+@import "src/sass-files/_live-auction__live-video";
+@import "src/sass-files/_live-bidding-chart";
+// --above add live-auction page
+// ---below add chart page
+@import "src/sass-files/_chart-catagory";
+// ---above add chart page
+// ---- construction page and design idea
+@import "src/sass-files/_construction-page";
+// -- warn bug
+@import "src/sass-files/_warning-bug";
 
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;

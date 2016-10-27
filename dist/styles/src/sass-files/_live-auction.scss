@@ -7,16 +7,42 @@
         background-color: unquote("rgb(#{$palette-blue-grey-900})");
         color:white;
         text-align: center;
-        height: 45px;
+        height: 50px;
         padding-left: 5px;
-        & .live-auction__header__title{
-            font-size: 0.55em;
+        & .live-auction__header__item-status{
+            font-size: 0.45em;
         }
-        & .live-auction__header__catagory{
-            font-size: 1.1em;
+        & .live-auction__header__item-short-name{
+            color:red;
+            font-size: 1.35em;
+            position: relative;
+            right: -150px;
         }
-        & .live-auction__header__des{
+        & .live-auction__header__total-isWaiting-items{
             font-size: 0.85em;
+        }
+        & .live-auction__header__auctioneer-container{
+            position: relative;
+            right: -50px;
+            & .live-auction__header__auctioneer__title{
+                    font-size: 0.55em;
+                    position: relative;
+                    right: -40px;
+            }
+            & .live-auction__header__auctioneer__name{
+                font-size: 0.5em;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            & .live-auction__header__auctioneer__img{
+                width: 1.8em;
+                height: 1.8em;
+                border-radius: 50%;
+                padding: 0;
+                margin: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
         & .live-auction__agent-container{
             @include flexbox;
