@@ -1,4 +1,5 @@
-jQuery(document).ready(function($){
+// jQuery(document).ready(function($){
+var Itemsline=(function(){
 		var dataMock = [
         {itemNo:"238906",shortName:"手表",
          imgUrl:["./images/images-photos-icons/photos/watch-for-live-auction1.jpeg",
@@ -46,17 +47,20 @@ jQuery(document).ready(function($){
                  "./images/images-photos-icons/photos/watch-for-live-auction1.jpeg"],
          description:"Deserunt dolore magna dolor aliquip qui do quis ipsum non cillum ex esse. Ullamco sit nisi occaecat laboris voluptate veniam consequat eu deserunt. Sit sunt deserunt excepteur magna aliqua duis ea eiusmod reprehenderit dolore. Mollit sint duis Lorem nulla quis do elit eiusmod esse irure nostrud fugiat incididunt voluptate. Anim nisi ullamco proident et in dolor sint esse."}
     ];
-	var jPLine=$('.cd-horizontal-timeline'),
-	jPEventContent=$('.live-auction__main').find('.mdl-card__supporting-text'),
-	itemNum=20;
 	var eventsMinDistance = 45;
-	insertItemsline(jPLine,jPEventContent,dataMock, itemNum);
-	setTimeout(function(){
-	var timelines = $('.cd-horizontal-timeline');
-		(timelines.length > 0) && initTimeline(timelines);
-	},100);
-       
-	function initTimeline(timelines) {
+	var done = function(){
+		var jPLine=$('.cd-horizontal-timeline'),
+		jPEventContent=$('.live-auction__main').find('.mdl-card__supporting-text'),
+		itemNum=20;
+		
+		insertItemsline(jPLine,jPEventContent,dataMock, itemNum);
+		setTimeout(function(){
+			var timelines = $('.cd-horizontal-timeline');
+			(timelines.length > 0) && initTimeline(timelines);
+			clickItemShowSomeOnHeader();
+		},200);
+    };  
+	var initTimeline = function (timelines) {
 		timelines.each(function(){
 			var timeline = $(this),
 				timelineComponents = {};
@@ -119,9 +123,9 @@ jQuery(document).ready(function($){
 				}
 			});
 		});
-	}
+	};
 
-	function updateSlide(timelineComponents, timelineTotWidth, string) {
+	var updateSlide = function (timelineComponents, timelineTotWidth, string) {
 		//retrieve translateX value of timelineComponents['eventsWrapper']
 		var translateValue = getTranslateValue(timelineComponents['eventsWrapper']),
 			wrapperWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', ''));
@@ -129,9 +133,9 @@ jQuery(document).ready(function($){
 		(string == 'next') 
 			? translateTimeline(timelineComponents, translateValue - wrapperWidth + eventsMinDistance, wrapperWidth - timelineTotWidth)
 			: translateTimeline(timelineComponents, translateValue + wrapperWidth - eventsMinDistance);
-	}
+	};
 
-	function showNewContent(timelineComponents, timelineTotWidth, string) {
+	var showNewContent = function (timelineComponents, timelineTotWidth, string) {
 		//go from one event to the next/previous one
 		var visibleContent =  timelineComponents['eventsContent'].find('.selected'),
 			newContent = ( string == 'next' ) ? visibleContent.next() : visibleContent.prev();
@@ -147,9 +151,9 @@ jQuery(document).ready(function($){
 			updateOlderEvents(newEvent);
 			updateTimelinePosition(string, newEvent, timelineComponents);
 		}
-	}
+	};
 
-	function updateTimelinePosition(string, event, timelineComponents) {
+	var updateTimelinePosition = function (string, event, timelineComponents) {
 		//translate timeline to the left/right according to the position of the selected event
 		var eventStyle = window.getComputedStyle(event.get(0), null),
 			eventLeft = Number(eventStyle.getPropertyValue("left").replace('px', '')),
@@ -160,9 +164,9 @@ jQuery(document).ready(function($){
         if( (string == 'next' && eventLeft > timelineWidth - timelineTranslate) || (string == 'prev' && eventLeft < - timelineTranslate) ) {
         	translateTimeline(timelineComponents, - eventLeft + timelineWidth/2, timelineWidth - timelineTotWidth);
         }
-	}
+	};
 
-	function translateTimeline(timelineComponents, value, totWidth) {
+	var translateTimeline = function (timelineComponents, value, totWidth) {
 		var eventsWrapper = timelineComponents['eventsWrapper'].get(0);
 		value = (value > 0) ? 0 : value; //only negative translate value
 		value = ( !(typeof totWidth === 'undefined') &&  value < totWidth ) ? totWidth : value; //do not translate more than timeline width
@@ -170,9 +174,9 @@ jQuery(document).ready(function($){
 		//update navigation arrows visibility
 		(value == 0 ) ? timelineComponents['timelineNavigation'].find('.prev').addClass('inactive') : timelineComponents['timelineNavigation'].find('.prev').removeClass('inactive');
 		(value == totWidth ) ? timelineComponents['timelineNavigation'].find('.next').addClass('inactive') : timelineComponents['timelineNavigation'].find('.next').removeClass('inactive');
-	}
+	};
 
-	function updateFilling(selectedEvent, filling, totWidth) {
+	var updateFilling = function (selectedEvent, filling, totWidth) {
 		//change .filling-line length according to the selected event
 		var eventStyle = window.getComputedStyle(selectedEvent.get(0), null),
 			eventLeft = eventStyle.getPropertyValue("left"),
@@ -180,34 +184,24 @@ jQuery(document).ready(function($){
 		eventLeft = Number(eventLeft.replace('px', '')) + Number(eventWidth.replace('px', ''))/2;
 		var scaleValue = eventLeft/totWidth;
 		setTransformValue(filling.get(0), 'scaleX', scaleValue);
-	}
+	};
 
-	function setDatePosition(timelineComponents, min) {
-		// for (i = 0; i < timelineComponents['timelineDates'].length; i++) { 
-		//     var distance = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][i]),
-		//     	distanceNorm = Math.round(distance/timelineComponents['eventsMinLapse']) + 2;
-		//     timelineComponents['timelineEvents'].eq(i).css('left', distanceNorm*min+'px');
-		// }
+	var setDatePosition = function (timelineComponents, min) {
 		for (var i = 0; i < timelineComponents['timelineEvents'].length; i++) { 
 			timelineComponents['timelineEvents'].eq(i).css('left', min*(1+i)+2+'px');
 		}
-	}
+	};
 
-	function setTimelineWidth(timelineComponents, width) {
-		// var timeSpan = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][timelineComponents['timelineDates'].length-1]),
-		// 	timeSpanNorm = timeSpan/timelineComponents['eventsMinLapse'],
-		// 	timeSpanNorm = Math.round(timeSpanNorm) + 4,
-		// 	totalWidth = timeSpanNorm*width;
-		// --- not suit itemsline
+	var setTimelineWidth = function (timelineComponents, width) {
 		var totalWidth = timelineComponents['timelineEvents'].length * width + 4;
 		timelineComponents['eventsWrapper'].css('width', totalWidth+'px');
 		updateFilling(timelineComponents['eventsWrapper'].find('a.selected'), timelineComponents['fillingLine'], totalWidth);
 		updateTimelinePosition('next', timelineComponents['eventsWrapper'].find('a.selected'), timelineComponents);
 	
 		return totalWidth;
-	}
+	};
 
-	function updateVisibleContent(event, eventsContent) {
+	var updateVisibleContent = function (event, eventsContent) {
 		var eventDate = event.data('date'),
 			visibleContent = eventsContent.find('.selected'),
 			selectedContent = eventsContent.find('[data-date="'+ eventDate +'"]'),
@@ -227,13 +221,13 @@ jQuery(document).ready(function($){
 			selectedContent.removeClass('enter-left enter-right');
 		});
 		eventsContent.css('height', selectedContentHeight+'px');
-	}
+	};
 
-	function updateOlderEvents(event) {
+	var updateOlderEvents = function (event) {
 		event.parent('li').prevAll('li').children('a').addClass('older-event').end().end().nextAll('li').children('a').removeClass('older-event');
-	}
+	};
 
-	function getTranslateValue(timeline) {
+	var getTranslateValue = function (timeline) {
 		var timelineStyle = window.getComputedStyle(timeline.get(0), null),
 			timelineTranslate = timelineStyle.getPropertyValue("-webkit-transform") ||
          		timelineStyle.getPropertyValue("-moz-transform") ||
@@ -251,18 +245,18 @@ jQuery(document).ready(function($){
         }
 
         return Number(translateValue);
-	}
+	};
 
-	function setTransformValue(element, property, value) {
+	var setTransformValue= function(element, property, value) {
 		element.style["-webkit-transform"] = property + "("+ value + ")";
 		element.style["-moz-transform"] = property+"("+value+")";
 		element.style["-ms-transform"] = property+"("+value+")";
 		element.style["-o-transform"] = property+"("+value+")";
 		element.style["transform"] = property+"("+value+")";
-	}
+	};
 
 	//based on http://stackoverflow.com/questions/542938/how-do-i-get-the-number-of-days-between-two-dates-in-javascript
-	function parseDate(events) {
+	var parseDate = function(events) {
 		var dateArrays = [];
 		events.each(function(){
 			var singleDate = $(this),
@@ -281,9 +275,9 @@ jQuery(document).ready(function($){
 			dateArrays.push(newDate);
 		});
 	    return dateArrays;
-	}
+	};
 
-	function daydiff(first, second) {
+	var daydiff = function(first, second) {
 	    return Math.round((second-first));
 	}
 
@@ -295,13 +289,8 @@ jQuery(document).ready(function($){
 		    dateDistances.push(distance);
 		}
 		return Math.min.apply(null, dateDistances);
-	}
-
-	/*
-		How to tell if a DOM element is visible in the current viewport?
-		http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
-	*/
-	function elementInViewport(el) {
+	};
+	var elementInViewport = function(el) {
 		var top = el.offsetTop;
 		var left = el.offsetLeft;
 		var width = el.offsetWidth;
@@ -319,16 +308,13 @@ jQuery(document).ready(function($){
 		    (top + height) > window.pageYOffset &&
 		    (left + width) > window.pageXOffset
 		);
-	}
-
-	function checkMQ() {
+	};
+	var checkMQ = function() {
 		//check if mobile or desktop device
 		return window.getComputedStyle(document.querySelector('.cd-horizontal-timeline'), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "");
-	}
-
-function createItemslineString(dataMock,itemsNum) {
+	};
+var createItemslineString = function(dataMock,itemsNum) {
         var startStr1 = 
-		// '<section class="cd-horizontal-timeline">'+
 							'<div class="timeline">'+
 								'<div class="events-wrapper">'+
 									'<div class="events">'+
@@ -343,7 +329,6 @@ function createItemslineString(dataMock,itemsNum) {
 									'<li><a href="#0" class="next">Next</a></li>'+
 								'</ul> <!-- .cd-timeline-navigation -->'+
 							'</div> <!-- .timeline -->';
-						// '</section>';
 		var startStr2 = '<div class="events-content">'+
 							'<ol>';
 		var middleStr2 = "";
@@ -375,145 +360,25 @@ function createItemslineString(dataMock,itemsNum) {
 						'</li>';
 		});
         return [startStr1+middleStr1+endStr1,startStr2+middleStr2+endStr2];
-}
-
-function insertItemsline(jParent1,jParent2,dataMock,itemNum){
+};
+var clickItemShowSomeOnHeader = function(){
+	var els=$('.cd-horizontal-timeline').find('.events-wrapper').find('ol>li');
+	var str="";
+	els.on('click',function(){
+		str=$(this).find('a').text();
+		$('#live-auction').trigger('clickChangeItemOnHeader',[str]);
+	});
+};
+var insertItemsline = function(jParent1,jParent2,dataMock,itemNum){
 	if (!jParent1.find('.timeline').length>0 && !jParent2.find('.event-contents').length>0){
 		var str = createItemslineString(dataMock,itemNum);
 		$(jParent1).prepend(str[0]);
 		$(jParent2).prepend(str[1]);
 	}
-}
-});
-
-
-
-
-
-// <section class="cd-horizontal-timeline">
-	// <div class="timeline">
-	// 	<div class="events-wrapper">
-	// 		<div class="events">
-	// 			<ol>
-	// 				<li><a href="#0" data-date="16/01/2014" class="selected">16 Jan</a></li>
-	// 				<li><a href="#0" data-date="28/02/2014">28 Feb</a></li>
-	// 				<li><a href="#0" data-date="20/04/2014">20 Mar</a></li>
-	// 				<li><a href="#0" data-date="20/05/2014">20 May</a></li>
-	// 				<li><a href="#0" data-date="09/07/2014">09 Jul</a></li>
-	// 				<li><a href="#0" data-date="30/08/2014">30 Aug</a></li>
-	// 				<li><a href="#0" data-date="15/09/2014">15 Sep</a></li>
-	// 				<li><a href="#0" data-date="01/11/2014">01 Nov</a></li>
-	// 				<li><a href="#0" data-date="10/12/2014">10 Dec</a></li>
-	// 				<li><a href="#0" data-date="19/01/2015">29 Jan</a></li>
-	// 				<li><a href="#0" data-date="03/03/2015">3 Mar</a></li>
-	// 			</ol>
-
-	// 			<span class="filling-line" aria-hidden="true"></span>
-	// 		</div> <!-- .events -->
-	// 	</div> <!-- .events-wrapper -->
-			
-// 		<ul class="cd-timeline-navigation">
-// 			<li><a href="#0" class="prev inactive">Prev</a></li>
-// 			<li><a href="#0" class="next">Next</a></li>
-// 		</ul> <!-- .cd-timeline-navigation -->
-// 	</div> <!-- .timeline -->
-
-
-
-
-
-
-// 	<div class="events-content">
-// 		<ol>
-// 			<li class="selected" data-date="16/01/2014">
-// 				<h2>Horizontal Timeline</h2>
-// 				<em>January 16th, 2014</em>
-// 				<p>	
-// 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-// 				</p>
-// 			</li>
-
-// 			<li data-date="28/02/2014">
-// 				<h2>Event title here</h2>
-// 				<em>February 28th, 2014</em>
-// 				<p>	
-// 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-// 				</p>
-// 			</li>
-
-// 			<li data-date="20/04/2014">
-// 				<h2>Event title here</h2>
-// 				<em>March 20th, 2014</em>
-// 				<p>	
-// 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-// 				</p>
-// 			</li>
-
-// 			<li data-date="20/05/2014">
-// 				<h2>Event title here</h2>
-// 				<em>May 20th, 2014</em>
-// 				<p>	
-// 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-// 				</p>
-// 			</li>
-
-// 			<li data-date="09/07/2014">
-// 				<h2>Event title here</h2>
-// 				<em>July 9th, 2014</em>
-// 				<p>	
-// 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-// 				</p>
-// 			</li>
-
-// 			<li data-date="30/08/2014">
-// 				<h2>Event title here</h2>
-// 				<em>August 30th, 2014</em>
-// 				<p>	
-// 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-// 				</p>
-// 			</li>
-
-// 			<li data-date="15/09/2014">
-// 				<h2>Event title here</h2>
-// 				<em>September 15th, 2014</em>
-// 				<p>	
-// 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-// 				</p>
-// 			</li>
-
-// 			<li data-date="01/11/2014">
-// 				<h2>Event title here</h2>
-// 				<em>November 1st, 2014</em>
-// 				<p>	
-// 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-// 				</p>
-// 			</li>
-
-// 			<li data-date="10/12/2014">
-// 				<h2>Event title here</h2>
-// 				<em>December 10th, 2014</em>
-// 				<p>	
-// 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-// 				</p>
-// 			</li>
-
-// 			<li data-date="19/01/2015">
-// 				<h2>Event title here</h2>
-// 				<em>January 19th, 2015</em>
-// 				<p>	
-// 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-// 				</p>
-// 			</li>
-
-// 			<li data-date="03/03/2015">
-// 				<h2>Event title here</h2>
-// 				<em>March 3rd, 2015</em>
-// 				<p>	
-// 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-// 				</p>
-// 			</li>
-// 		</ol>
-// 	</div> <!-- .events-content -->
-// </section>
-
+};
+return {
+	done:done
+};
+})();
+// });
 

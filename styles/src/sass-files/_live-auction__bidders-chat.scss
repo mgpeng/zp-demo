@@ -28,6 +28,8 @@
         }
     }
     & .live-auction__chat-icon{
+        position:relative;
+        right:-70px;
         opacity:0;
         transition: opacity 0.6s;
         &.showAni__chat{

@@ -2,9 +2,9 @@
 @import "src/material-design-lite";
 @import "src/_include-media";
 @import "src/_flex";
-@import "src/_mixin-transition";
-@import 'src/_bg-img-linear-gradient';
-@import 'src/_generic-transform';
+// @import "src/_mixin-transition";
+// @import 'src/_bg-img-linear-gradient';
+// @import 'src/_generic-transform';
 
 //----import map
 @import "_demo-header__map";
@@ -15,19 +15,9 @@
 @import "_demo-header__drawer";
 //--tab-bar
 @import "_demo-header__tab-bar";
-// --- chart
-@import "_chart-catagory";
-// ---- construction page and design idea
-@import "_construction-page";
-// -- warn bug
-@import "_warning-bug";
-// --- add logo
+// --- add logo to text search logo container
 @import "_add-logo";
-// -- add live-auction
-@import "_live-auction";
-// -- below two with _live-auction togather
-@import "_itemsline";
-@import "_live-auction__bidders-chat";
+
 
 // ---------below header part 
 .mdl-layout__header{

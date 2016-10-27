@@ -4,7 +4,11 @@
 // ----- decor line
 .mdl-pg__decor-line-grey{
    border:1px solid unquote("rgb(#{$palette-grey-400})");
+   margin:0 !important;
+   padding:0 !important;
 }
 .mdl-pg__decor-line-black{
    border:1px solid unquote("rgb(#{$palette-grey-600})");
+   margin:0 !important;
+   padding:0 !important;
 }
