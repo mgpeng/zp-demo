@@ -88,9 +88,12 @@ if it's not present, don't show loader */
 	});
 </script>
   </head>  
-  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base"><script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='/browser-sync/browser-sync-client.2.15.0.js'><\/script>".replace("HOST", location.hostname));
-//]]></script>
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <script id="__bs_script__">
+   // <![CDATA[
+   //    document.write("<script async src='/browser-sync/browser-sync-client.2.15.0.js'><\/script>".replace("HOST", location.hostname));
+   // ]]>
+</script>
 
 <!-- Paste this code after body tag -->
 <div class="se-pre-con"></div>
@@ -1733,27 +1736,28 @@ if it's not present, don't show loader */
                         <img src="./images/sample-logo1.jpeg" class="agent-logo"/>
                       </div>
                       <div class="live-auction__header__agent mdl-cell--middle">ABC Auction Co.</div>
-                      <!--<div class="live-auction__header__location mdl-cell mdl-cell--2-col">纽约市51街</div>-->
                     </div>
-                    <div class="live-auction__header__item-short-name mdl-cell mdl-cell--2-col mdl-cell--middle">手表</div>
-                    <div class="live-auction__header__items-status mdl-cell mdl-cell--2-col mdl-cell--bottom">正在拍</div>
-                    <!--<div class="live-auction__header__total-isWaiting-items mdl-cell mdl-cell--3-col mdl-cell--middle">还有50件拍品 马上拍!</div>-->
-                    <div class="live-auction__header__auctioneer-container mdl-cell mdl-cell--5-col mdl-cell--middle mdl-grid">
-                      <span class="live-auction__header__auctioneer__title mdl-cell mdl-cell--4-col mdl-cell--middle mdl-cell--2-offset">拍卖师</span>
-                      <div class="mdl-cell mdl-cell--6-col mdl-grid">
+                    <div class="live-auction__header__item-container mdl-cell--5-col mdl-grid">
+                    <div class="live-auction__header__item-status mdl-cell mdl-cell--3-col">正在拍</div>
+                    <div class="live-auction__header__item-short-name mdl-cell mdl-cell--5-col mdl-cell--middle">手表</div>
+                    <div class="live-auction__header__items--current-price mdl-cell mdl-cell--4-col mdl-cell--middle">$-000</div>
+                    </div>
+                    <div class="live-auction__header__auctioneer-container mdl-cell mdl-cell--4-col mdl-cell--middle mdl-grid">
+                      <span class="live-auction__header__auctioneer__title mdl-cell mdl-cell--4-col mdl-cell--middle">拍卖师</span>
+                      <div class="mdl-cell mdl-cell--7-col mdl-grid">
                         <img class="live-auction__header__auctioneer__img mdl-cell mdl-cell--12-col mdl-cell--middle" src="./images/images-photos-icons/bridegroomIcon35x35.png" />
                         <span class="live-auction__header__auctioneer__name mdl-cell mdl-cell--12-col mdl-cell--middle">Michael王</span>
                        </div>
                     </div>
                 </div>
-            <div class="mdl-pg__decor-line-grey mdl-cell mdl-cell--12-col"></div>
+            <div class="mdl-pg__decor-line-grey mdl-cell mdl-cell--12-col mdl-grid"></div>
             <div class="live-video-container mdl-cell mdl-cell--3-col">
-              <div class="main-live-video section__play-btn mdl-cell mdl-cell--12-col mdl-color--teal-100 mdl-color-text--white">
+              <div class="main-live-video section__play-btn mdl-cell mdl-cell--12-col mdl-color--grey-800 mdl-color-text--white">
                 <i class="material-icons">play_circle_filled</i>
                 <span>直播主视频</span>
               </div>
               <div class="mdl-pg__decor-line-grey mdl-cell mdl-cell--12-col"></div>
-              <div class="all-degree-live-video section__play-btn mdl-cell mdl-cell--12-col mdl-color--teal-100 mdl-color-text--white">
+              <div class="all-degree-live-video section__play-btn mdl-cell mdl-cell--12-col mdl-color--grey-800 mdl-color-text--white">
                 <i class="material-icons">play_circle_filled</i>
                 <span>直播全景视频</span>
               </div>
@@ -1762,24 +1766,20 @@ if it's not present, don't show loader */
               <section class="cd-horizontal-timeline mdl-cell mdl-cell--12-col">
               </section>
               <div class="live-auction__main mdl-card mdl-cell mdl-cell--12-col">
-                <div class="itemsline-event-content-container mdl-card__supporting-text">   
-                </div>
-                <div class="mdl-card__actions">
-                  <a href="#" class="mdl-button">Read our features</a>
-                </div>
+                <div class="itemsline-event-content-container mdl-card__supporting-text"></div>
+                   <div class="mdl-card__actions live-bidding-chart-wrapper">
+                     <div class="live-bidding-chart-container mdl-grid">
+                        <svg id="live-bidding-chart-svg" class="mdl-cell mdl-cell--12-col" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">  
+                        </svg>
+                      </div>
+                   </div>
               </div>
             </div>
             <div class="mdl-pg__decor-line-grey mdl-cell mdl-cell--12-col"></div>
             <div class="live-auction__social-container mdl-cell mdl-cell--12-col mdl-grid"></div>  
           </section>
-          <div class="live-bidding-chart-container">
-  <div class="bottom-unit-container">
-  <svg id="live-bidding-chart-svg" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   
-  <defs></defs>
-  </svg>
-  </div>
-</div>
-        </div>
+          </div>
+        
         <footer class="mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
             <div class="mdl-mega-footer--drop-down-section">
@@ -1910,8 +1910,7 @@ if it's not present, don't show loader */
                   });
               $('a[href="#charts"]').on('click',function(){
                   console.log("cp1");
-                  $.getScript( "./scripts/my-js/chart-catagory.js", function() {
-                  });
+                  $.getScript( "./scripts/my-js/chart-catagory.js", function() {});
               });
               $('a[href="#live-auction"]').on('click',function(){
                   console.log("cp1");
@@ -1925,10 +1924,10 @@ if it's not present, don't show loader */
                       LiveAuctionBiddersChat.done();
                   });
                   $.getScript("./scripts/my-js/live-bidding-chart.js", function() {
-                      LiveBiddingChart.addBottomUnits();
+                      LiveBiddingChart.done();
+                   //   LiveBiddingChart.lowAllBiddingsAndMoveLeft();
                   });
               });
-              
          });   //--- end of document ready 
      });      //--- end of afterLoading gif 1s 
     </script>

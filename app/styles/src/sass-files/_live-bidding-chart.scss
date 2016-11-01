@@ -1,18 +1,15 @@
-.live-bidding-chart-container{
-  background:rgba(216,216,216,0.3);
-  position:relative;
-  width:25em;
-  height:8em;
-}
-.bottom-unit-container{
-  padding:0;
-  margin:0;
-  position:absolute;
-  bottom:0;
-  background:rgba(100,100,100,0.5);
-  & svg#live-bidding-chart-svg{
-   position:absolute;
-   bottom:0px;
-   visibility: hidden;
+.live-bidding-chart-wrapper{
+  margin: 0 !important;
+  padding:0 !important;
+  & .live-bidding-chart-container{
+    background:unquote("rgb(#{$palette-grey-700})");
+    position:relative;
+    width: 100%;
+    height:5em;
+    overflow: hidden;
+
+    & svg#live-bidding-chart-svg{
+      visibility: hidden;
+    }
   }
 }

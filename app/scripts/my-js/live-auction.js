@@ -91,6 +91,11 @@ var LiveAuction=(function(){
             el.text(str);
             el.fadeIn(600);
         });
+        $('#live-auction').on('ItemPriceFollowBiddingOnHeader',function(e,str){
+            var el=$('#live-auction').find('.live-auction__header__items--current-price');
+            el.text(str);
+            el.fadeIn(600);
+        });
     };
     return {
        subEvent:subEvent

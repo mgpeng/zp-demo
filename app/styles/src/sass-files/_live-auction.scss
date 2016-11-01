@@ -9,34 +9,35 @@
         text-align: center;
         height: 50px;
         padding-left: 5px;
-        & .live-auction__header__item-status{
-            font-size: 0.45em;
-        }
-        & .live-auction__header__item-short-name{
-            color:red;
-            font-size: 1.35em;
-            position: relative;
-            right: -150px;
-        }
-        & .live-auction__header__total-isWaiting-items{
-            font-size: 0.85em;
+        & .live-auction__header__item-container{
+            & .live-auction__header__item-status{
+                font-size: 0.3em;
+                color:grey;
+            }
+            & .live-auction__header__item-short-name{
+                color:white;
+                font-size: 1.35em;
+            }
+            & .live-auction__header__items--current-price{
+                font-size: 0.85em;
+            }
         }
         & .live-auction__header__auctioneer-container{
             position: relative;
-            right: -50px;
+            right: -30px;
             & .live-auction__header__auctioneer__title{
-                    font-size: 0.55em;
+                    font-size: 0.3em;
                     position: relative;
-                    right: -40px;
+                    right: -20px;
             }
             & .live-auction__header__auctioneer__name{
-                font-size: 0.5em;
+                font-size: 0.3em;
                 margin-top: 0;
                 margin-bottom: 0;
             }
             & .live-auction__header__auctioneer__img{
-                width: 1.8em;
-                height: 1.8em;
+                width: 1.4em;
+                height: 1.4em;
                 border-radius: 50%;
                 padding: 0;
                 margin: 0;
