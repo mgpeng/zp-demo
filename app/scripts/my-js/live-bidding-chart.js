@@ -135,8 +135,8 @@ var LiveBiddingChart=(function(){
       var len=glist.length;
       createOneUnit(len+1,len*horizotalDistance,originX,originY,horizotalDistance,verticalDistance,rectWidth,rectHeight,rx,ry,currency,money,r,imgUrl);
   };
-  var addOneBiddingAni=function(ind){
-      var tl=new TimelineMax();
+  var addOneBiddingAni = function(ind,biddingPrice){
+      var tl=new TimelineMax({onComplete:showBiddingOnHeader,onCompleteParams:[biddingPrice]});
           var hline=$('svg#live-bidding-chart-svg').find('g#bottom-unit-'+(ind+1)).find('line#h-line'+(ind+1));
           var vline=$('svg#live-bidding-chart-svg').find('g#bottom-unit-'+(ind+1)).find('line#v-line'+(ind+1));
           var srect=$('svg#live-bidding-chart-svg').find('g#bottom-unit-'+(ind+1)).find('rect#s-rect'+(ind+1));
@@ -156,7 +156,11 @@ var LiveBiddingChart=(function(){
         .add(TweenMax.fromTo([vline,srect],0.1,{rotation:'0',transformOrigin:'50% 40'},{rotation:'5',transformOrigin:'50% 40',ease:Elastic.easeInOut.config(1,0.6)}))
         .add(TweenMax.to([vline,srect],0.1,{rotation:'0',transformOrigin:'50% 40',ease:Elastic.easeInOut.config(1,0.6)}));
         return tl;
+        function showBiddingOnHeader(biddingPrice){
+          $('#live-auction').trigger('ItemPriceFollowBiddingOnHeader',[biddingPrice]);
+        }
   };
+  
   var lowAllBiddingsAndMoveLeftAni = function(){
           var glist=$('svg#live-bidding-chart-svg').find('g[id*="bottom-unit-"]');
           var len=glist.length;
@@ -196,7 +200,7 @@ var LiveBiddingChart=(function(){
       tl.add(moveOneUnitLeftAni());
       var glist=$root.find('g');
       var len=glist.length;
-      tl.add(addOneBiddingAni(len-1));
+      tl.add(addOneBiddingAni(len-1,obj.currency+" "+obj.bidNumber));
       return tl;
   };
   var cutVerticalLine = function(line){
@@ -216,7 +220,7 @@ var LiveBiddingChart=(function(){
           addOneBottomUnit(obj.originX,obj.originY,obj.horizotalDistance,obj.verticalDistance,
                            obj.rectWidth,obj.rectHeight,obj.ovalRx,obj.ovalRy,obj.currency,obj.bidNumber,
                            obj.avatarSize,obj.bidderAvatarUrl);
-          tl.add(addOneBiddingAni(ind));
+          tl.add(addOneBiddingAni(ind,obj.currency+" "+obj.bidNumber));
       });
       TweenMax.set('svg#live-bidding-chart-svg', {visibility: 'visible'});
       //  tl.add(lowAllBiddingsAndMoveLeftAni());

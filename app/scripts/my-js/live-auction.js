@@ -93,8 +93,8 @@ var LiveAuction=(function(){
         });
         $('#live-auction').on('ItemPriceFollowBiddingOnHeader',function(e,str){
             var el=$('#live-auction').find('.live-auction__header__items--current-price');
-            el.text(str);
-            el.fadeIn(600);
+            el.text(str).hide();
+            el.animate({scale:1.2},800);
         });
     };
     return {
