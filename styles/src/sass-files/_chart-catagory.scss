@@ -51,6 +51,7 @@ section.main-chart{
         }
     }
     & .main-chart__social-container{
+        background-color: unquote("rgb(#{$palette-grey-900})");
         & .main-chart__agent--isOnline,
         & .main-chart__bidder--isWinner{
             padding:0;

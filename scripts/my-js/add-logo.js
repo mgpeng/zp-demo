@@ -49,21 +49,21 @@ var AddLogo = (function(){
             drawSVG:"100% 100%",
             ease:Power4.easeInOut,
             alpha:0
-            }, 0.2, '-=2.5')
+            }, 0.2,'-=2.5')
             .staggerFrom('#right path', 2, {
             drawSVG:"100% 100%",
             ease:Power4.easeInOut,
             alpha:0
-            }, 0.2, '-=2.5')
+            }, 0.2,'-=2.5')
             .staggerFrom('#left path', 2, {
             drawSVG:"100% 100%",
             ease:Power4.easeInOut,
             alpha:0
-            }, 0.2, '-=2.5')
+            }, 0.2,'-=2.5')
             .to(['#bottom path', '#right path', '#left path'], 2, {
             drawSVG:"0% 0%",
             ease:Power1.easeOut
-            },  '-=1.5')
+            },'-=1.5')
             .to('#logo-text',1.5,{scale:0.9,alpha:0.3,transformOrigin:'49.6% 67.5%',ease:Power1.easeInOut});
             TweenMax.globalTimeScale(0.5);
     };

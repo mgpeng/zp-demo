@@ -27,6 +27,8 @@ will be correctly compiled during `gulp serve` and `gulp`
 // --- generic decor line 
 @import "src/sass-files/_mdl-pg-generic-decor";
 //------below split first page scss to few scss files
+// ---- first page overview menu 
+@import "src/sass-files/_overview-menu";
 @import "src/sass-files/_demo-header";
 // --below add live-auction page
 @import "src/sass-files/_live-auction";
@@ -75,6 +77,9 @@ html, body {
 }
 //----below-let main content left and right side have more space 
 //-----look nice
+.mdl-demo main{
+  background-color:#3d4044 !important;
+}
 .mdl-demo main > .mdl-layout__tab-panel {
   padding: 8px;
   padding-top: 25px;
