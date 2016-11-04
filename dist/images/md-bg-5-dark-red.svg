@@ -1,46 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="98px" height="134px" viewBox="-10 -10 280 320" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FBFBFB;">
-    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+<svg width="100px" height="134px" viewBox="0 0 250 325" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FBFBFB;">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch    #1B2F59 -->
     <title>Letter</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <rect id="path-1" x="154" y="119" width="300" height="111"></rect>
+        <rect id="path-1" x="169.609158" y="174.5" width="158.586902" height="256"></rect>
         <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
-            <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
-            <feOffset dx="0" dy="6" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feOffset dx="0" dy="8" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <rect id="path-3" x="175" y="97" width="300" height="111"></rect>
+        <rect id="path-3" x="154" y="119" width="300" height="111"></rect>
         <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-4">
             <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="0" dy="6" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <rect id="path-5" x="197" y="75" width="300" height="111"></rect>
+        <rect id="path-5" x="175" y="97" width="300" height="111"></rect>
         <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-6">
             <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="0" dy="6" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <rect id="path-7" x="47" y="355" width="300" height="111"></rect>
+        <rect id="path-7" x="197" y="75" width="300" height="111"></rect>
         <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-8">
             <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
-            <feOffset dx="3" dy="-6" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feOffset dx="0" dy="6" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <rect id="path-9" x="25" y="377" width="300" height="111"></rect>
+        <rect id="path-9" x="47" y="375" width="300" height="111"></rect>
         <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-10">
             <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="3" dy="-6" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <rect id="path-11" x="4" y="399" width="300" height="111"></rect>
+        <rect id="path-11" x="25" y="397" width="300" height="111"></rect>
         <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-12">
+            <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="3" dy="-6" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-13" x="4" y="419" width="300" height="111"></rect>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-14">
             <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="3" dy="-6" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
@@ -48,32 +54,36 @@
         </filter>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Letter" transform="translate(-96.000000, -31.000000)">
+        <g id="Letter" transform="translate(-96.000000, -21.000000)">
             <g id="md-bg-template-2" transform="translate(-30.000000, -118.000000)">
-                <rect id="Rectangle" fill="#2F487B" x="123" y="147" width="250" height="300"></rect>
-                <g id="top-rect-3" transform="translate(304.000000, 174.500000) rotate(-326.000000) translate(-304.000000, -174.500000) ">
+                <rect id="Rectangle-back" fill="#3d4044" x="119" y="131" width="265" height="342"></rect>  
+                <g id="Rectangle">
                     <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
-                    <use fill="#273873" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <use fill="hsl(0, 95.8%, 28.5%)" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g id="top-rect-3" transform="translate(304.000000, 174.500000) rotate(-326.000000) translate(-304.000000, -174.500000) ">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill="hsl(0, 95.8%, 28.5%)" fill-rule="evenodd" xlink:href="#path-3"></use>
                 </g>
                 <g id="top-rect-2" transform="translate(325.000000, 152.500000) rotate(-326.000000) translate(-325.000000, -152.500000) ">
-                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
-                    <use fill="#24356D" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    <use fill="hsl(0, 95.8%, 28.5%)" fill-rule="evenodd" xlink:href="#path-5"></use>
                 </g>
                 <g id="top-rect-1" transform="translate(347.000000, 130.500000) rotate(-326.000000) translate(-347.000000, -130.500000) ">
-                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
-                    <use fill="#233574" fill-rule="evenodd" xlink:href="#path-5"></use>
-                </g>
-                <g id="bottom-rect-3" transform="translate(197.000000, 410.500000) rotate(-323.000000) translate(-197.000000, -410.500000) ">
                     <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
-                    <use fill="#243D70" fill-rule="evenodd" xlink:href="#path-7"></use>
+                    <use fill="hsl(0, 95.8%, 28.5%)" fill-rule="evenodd" xlink:href="#path-7"></use>
                 </g>
-                <g id="bottom-rect-2" transform="translate(175.000000, 432.500000) rotate(-323.000000) translate(-175.000000, -432.500000) ">
+                <g id="bottom-rect-3" transform="translate(197.000000, 430.500000) rotate(-323.000000) translate(-197.000000, -430.500000) ">
                     <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use>
-                    <use fill="#223A6D" fill-rule="evenodd" xlink:href="#path-9"></use>
+                    <use fill="hsl(0, 95.8%, 28.5%)" fill-rule="evenodd" xlink:href="#path-9"></use>
                 </g>
-                <g id="bottom-rect-1" transform="translate(154.000000, 454.500000) rotate(-323.000000) translate(-154.000000, -454.500000) ">
+                <g id="bottom-rect-2" transform="translate(175.000000, 452.500000) rotate(-323.000000) translate(-175.000000, -452.500000) ">
                     <use fill="black" fill-opacity="1" filter="url(#filter-12)" xlink:href="#path-11"></use>
-                    <use fill="#284072" fill-rule="evenodd" xlink:href="#path-11"></use>
+                    <use fill="hsl(0, 95.8%, 28.5%)" fill-rule="evenodd" xlink:href="#path-11"></use>
+                </g>
+                <g id="bottom-rect-1" transform="translate(154.000000, 474.500000) rotate(-323.000000) translate(-154.000000, -474.500000) ">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-14)" xlink:href="#path-13"></use>
+                    <use fill="hsl(0, 95.8%, 28.5%)" fill-rule="evenodd" xlink:href="#path-13"></use>
                 </g>
             </g>
         </g>

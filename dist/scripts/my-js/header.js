@@ -123,7 +123,12 @@ var cnt= $(" .mdl-layout__header ").find(" .header-search__container ");
         var tabCnt=$('.mdl-layout__header')
                     .find('.mdl-layout__tab-bar-container');
         // var tabletWidth = 768;
-        var isLessTablet=$(window).outerWidth() <= 768 ? true : false;
+        var isLessTablet;
+        if ($(window).outerWidth() <= 768){
+            isLessTablet=true
+        } else {
+            isLessTablet=false
+        }
         $('main').on('scroll', function(){
                 var that=$(this)[0];
                 var currntScrollTop=that.scrollTop;
@@ -164,7 +169,6 @@ var cnt= $(" .mdl-layout__header ").find(" .header-search__container ");
                 initScrollTop=that.scrollTop;
         });
 //  ---above scroll up and down
-
   var _once = function(func) {
     var ran = false, memo;
     return function() {
@@ -175,23 +179,3 @@ var cnt= $(" .mdl-layout__header ").find(" .header-search__container ");
       return memo;
     };
   };
-
-  // ---
-//   $(function(){
-// 	var $window = $('body');		// --this object is
-// 	var scrollTime = 1.2;			//Scroll time
-// 	var scrollDistance = 170;		//Distance. Use smaller value for shorter scroll and greater value for longer scroll
-	
-// 	$window.on("wheel", function(event){
-// 		event.preventDefault();	
-// 		var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
-// 		var scrollTop = $window.scrollTop();
-// 		var finalScroll = scrollTop - parseInt(delta*scrollDistance);
-// 		TweenMax.to($window, scrollTime, {
-// 			scrollTo : { y: finalScroll, autoKill:true },
-// 				ease: Power1.easeOut,	//For more easing functions see http://api.greensock.com/js/com/greensock/easing/package-detail.html
-// 				autoKill: true,
-// 				overwrite: 5							
-// 			});
-// 	});
-//  });

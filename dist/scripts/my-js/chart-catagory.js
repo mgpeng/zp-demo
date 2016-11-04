@@ -119,9 +119,9 @@ return {
                     ChartCatagory.setChartCanvaAndParentWidthHeight([ctx5,ctx6],[{width:135,height:150},{width:135,height:150}]);
                     var objStrArrLine=ChartCatagory.createLineChartDataObj();
                     var objStrArrDuoghnut=ChartCatagory.createBarPieDoughnutChartDataObj('doughnut');
-                    var myChart1 = new Chart(ctx1, objStrArrLine[0]);
-                    var myChart2 = new Chart(ctx2, objStrArrLine[1]);
-                    var myChart3 = new Chart(ctx3, objStrArrDuoghnut[0]);
-                    var myChart4 = new Chart(ctx4, objStrArrDuoghnut[1]);
-                    var myChart3 = new Chart(ctx5, objStrArrDuoghnut[2]);
-                    var myChart4 = new Chart(ctx6, objStrArrDuoghnut[3]); 
+                    var mChart1 = new Chart(ctx1, objStrArrLine[0]);
+                    var mChart2 = new Chart(ctx2, objStrArrLine[1]);
+                    var mChart3 = new Chart(ctx3, objStrArrDuoghnut[0]);
+                    var mChart4 = new Chart(ctx4, objStrArrDuoghnut[1]);
+                    var mChart3 = new Chart(ctx5, objStrArrDuoghnut[2]);
+                    var mChart4 = new Chart(ctx6, objStrArrDuoghnut[3]); 
