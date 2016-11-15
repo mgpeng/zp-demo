@@ -80,7 +80,6 @@
       this.rippleElement_.style.width = this.rippleSize_ + 'px';
       this.rippleElement_.style.height = this.rippleSize_ + 'px';
     }
-
     this.rippleElement_.classList.add(this.CssClasses_.IS_VISIBLE);
 
     if (event.type === 'mousedown' && this.ignoringMouseDown_) {

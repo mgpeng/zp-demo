@@ -1,9 +1,83 @@
 .overview-container{
     margin-top:4em;
     max-width:860px;
+    position: relative;
 }
-@mixin boxShadow-8dp ($color){
-    box-shadow: 0 8px 10px 1px rgba($color, 0.28), 0 6px 14px 2px rgba($color, 0.28), 0 6px 5px -3px rgba($color, 0.28);
+.overview-overlay{
+        background:transparent;
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        margin:0;
+        padding:0;
+        z-index:-100;
+        & .ani-circle{
+            position:relative;
+            top:-10px;
+            left:-10px;
+            width:1px;
+            height:1px;
+            border-radius: 50%;
+            background:transparent;
+        }
+}
+.click-ripple-container{
+    position:absolute;
+    z-index:-1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+@-webkit-keyframes rip 
+{
+  0%  {
+    box-shadow:0 0 0 0 transparent,
+               0 0 0 0 transparent,
+               0 0 0 0 transparent,
+               0 0 0 0 transparent;
+  }
+  15%  {
+    box-shadow:0 0 0 0 #45c2c5,
+               0 0 0 0 rgba(255,255,255,0.4),
+               0 0 0 0 #45c2c5,
+               0 0 0 0 rgba(0,0,0,0.08);
+  }
+  100% {
+    box-shadow:0 0 80px 400px #45c2c5,
+               0 0 20px 420px transparent,
+               0 0 60px 440px #45c2c5,
+               0 0 10px 460px transparent;
+  }
+}
+@-moz-keyframes rip 
+{
+  0%  {
+    box-shadow:0 0 0 0 transparent,
+               0 0 0 0 transparent,
+               0 0 0 0 transparent,
+               0 0 0 0 transparent;
+  }
+  15%  {
+    box-shadow:0 0 0 0 #45c2c5,
+               0 0 0 0 rgba(255,255,255,0.4),
+               0 0 0 0 #45c2c5,
+               0 0 0 0 rgba(0,0,0,0.08);
+  }
+  100% {
+    box-shadow:0 0 80px 400px #45c2c5,
+               0 0 20px 420px transparent,
+               0 0 60px 440px #45c2c5,
+               0 0 10px 460px transparent;
+  }
+}
+@mixin boxShadow-floatHigher ($color){
+    box-shadow: 0 18px 10px 1px rgba($color, 0.28), 10px 6px 14px 2px rgba($color, 0.28), 5px 10px 5px -3px rgba($color, 0.28);
+}
+@mixin boxShadow-floatLower ($color){
+    box-shadow: 0 5px 5px 1px rgba($color, 0.28), 1px 6px 10px 1px rgba($color, 0.28), 2px 6px 5px -1px rgba($color, 0.28);
 }
 .overview-biddingNow-container.mdl-card,
 .overview-biddingSoon-container.mdl-card,
@@ -11,11 +85,39 @@
 .overview-hotLot-container.mdl-card,
 .overview-coldLot-container.mdl-card,
 .overview-auctionHouse-container.mdl-card {
-    background-image: url('../images/mdl-card-bg-two-color.svg'); 
-    @include boxShadow-8dp(black);
+    background:transparent;
+    @include boxShadow-floatHigher(black);
+    transition:all 0.2s;
+    &:hover{
+        box-shadow: 0px 0px 0px;
+        transition:all 0.25s;
+        & svg{
+            & polygon#triangle-up{
+                fill:hsl(188.1, 8%, 50%);
+                transition:all 0.25s ease-in-out;
+            }
+           & polygon#triangle-down{
+                fill:hsl(188.1, 8%, 55%);
+                transition:all 0.25s ease-in-out;
+            }
+        }
+    }
+    & svg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        & polygon#triangle-up{
+                transition:all 0.2s ease-in-out;
+        }
+        & polygon#triangle-down{
+                transition:all 0.2s ease-in-out;
+        }
+    }
     width: 360px;
-    min-height: 150px;
     height: 150px;
+    max-height:150px;
+    min-height:150px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2.6em;
@@ -26,25 +128,33 @@
     & .overview-hotLot-title,
     & .overview-coldLot-title,
     & .overview-auctionHouse-title {
+        max-height:145px;
         margin:0;
         padding:0;
         height:100%;
         color: #fff;
         & .mdl-card__title-text{
-            font-size: 1em;
+            font-size: 0.9em;
+            padding: 6px;
             margin-left: auto;
             margin-right: auto;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.8em;
         }
     }
     & .overview-biddingNow-title{
-        background-image: url('../images/md-bg-5-dark-yellow.svg'); 
+        background-image: url('../images/biddingNow.svg'), url('../images/md-bg-5-dark-yellow.svg'); 
+        background-repeat: no-repeat, no-repeat;
+        background-position:center 30%,center center;
     }
     & .overview-biddingSoon-title{
-        background-image: url('../images/md-bg-5-dark-blue.svg'); 
+        background-image: url('../images/biddingSoon.svg'), url('../images/md-bg-5-dark-blue.svg');
+        background-repeat: no-repeat, no-repeat;
+        background-position:center 30%, center center;
     }
     & .overview-biddingChart-title{
-        background-image: url('../images/md-bg-5-dark-green.svg'); 
+        background-image: url('../images/bidChart.svg'), url('../images/md-bg-5-dark-green.svg');
+        background-repeat: no-repeat, no-repeat;
+        background-position:center 30%, center center;
     }
     & .overview-hotLot-title{
         background-image: url('../images/md-bg-5-dark-red.svg'); 
@@ -53,7 +163,9 @@
         background-image: url('../images/md-bg-5.svg'); 
     }
     & .overview-auctionHouse-title{
-        background-image: url('../images/md-bg-5-dark-cyan.svg'); 
+        background-image: url('../images/auctionHouse.svg'), url('../images/md-bg-5-dark-cyan.svg');
+        background-repeat: no-repeat, no-repeat;
+        background-position:center 30%, center center;
     }
     & .overview-biddingNow-text-action-container,
     & .overview-biddingSoon-text-action-container,
@@ -64,15 +176,20 @@
         margin:0;
         padding:0;
         height:100%;
+        max-height:145px;
         & .overview-biddingNow-text,
         & .overview-biddingSoon-text,
         & .overview-biddingChart-text,
         & .overview-hotLot-text,
         & .overview-coldLot-text,
         & .overview-auctionHouse-text{
+            color: hsla(178,60%,89%,1);
             margin:0;
             padding:0;
             height:80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         & .overview-biddingNow-action,
         & .overview-biddingSoon-action,
@@ -82,6 +199,35 @@
         & .overview-auctionHouse-action{
             margin:0;
             padding:0;
+            & a{
+                color:#3a3939;
+                font-size:0.8em;
+            }
         }
     }
+}
+
+
+.enjoy-css {
+  box-sizing:content-box;
+  cursor: pointer;
+  border: none;
+  /*font: normal 1.5em/normal "Passero One", Helvetica, sans-serif;*/
+  color: rgba(255,255,255,1);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  text-shadow: 1px 1px 0px rgb(210,210,210), 1px 2px 0px rgb(180,180,180), 2px 3px 0px rgb(150,150,150), 4px 4px 6px rgba(195,195,195,0.5),-4px -4px 6px rgba(195,195,195,0.5),-4px 4px 6px rgba(195,195,195,0.5),4px -4px 6px rgba(195,195,195,0.5);
+  /**/
+  /*  , 1px 5px 0 rgb(170,170,170);*/
+  /*, 0 6px 1px rgba(0,0,0,0.0980392) , 0 0 5px rgba(0,0,0,0.0980392); */
+  /*, 0 1px 3px rgba(0,0,0,0.298039) , 0 3px 5px rgba(0,0,0,0.2) , 0 5px 10px rgba(0,0,0,0.247059) , 0 10px 10px rgba(0,0,0,0.2) , 0 20px 20px rgba(0,0,0,0.14902) ;*/
+  transition:all 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+
+.enjoy-css:hover {
+  text-shadow:none;
+  font-size:1.1em;
+  transition:all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0.01s;
 }
