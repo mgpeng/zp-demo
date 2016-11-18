@@ -86,13 +86,13 @@ var LiveAuction=(function(){
 
     // };
     var subEvent = function(){
-        $('#live-auction').on('clickChangeItemOnHeader',function(e,str){
-            var el=$('#live-auction').find('.live-auction__header__item-short-name');
+        $('#liveAuction-page').on('clickChangeItemOnHeader',function(e,str){
+            var el=$('#liveAuction-page').find('.live-auction__header__item-short-name');
             el.text(str).hide();
             el.fadeIn(800);
         });
-        $('#live-auction').on('ItemPriceFollowBiddingOnHeader',function(e,str){
-            var el=$('#live-auction').find('.live-auction__header__items--current-price');
+        $('#liveAuction-page').on('ItemPriceFollowBiddingOnHeader',function(e,str){
+            var el=$('#liveAuction-page').find('.live-auction__header__items--current-price');
             el.text(str).hide();
             el.fadeIn(800);
         });

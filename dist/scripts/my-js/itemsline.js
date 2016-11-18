@@ -371,7 +371,7 @@ var clickItemShowSomeOnHeader = function(){
 	var str = "";
 	els.on('click',function(){
 		str=$(this).find('a').text();
-		$('#live-auction').trigger('clickChangeItemOnHeader',[str]);
+		$('#liveAuction-page').trigger('clickChangeItemOnHeader',[str]);
 	});
 };
 var insertItemsline = function(jParent1,jParent2,dataMock,itemNum){
