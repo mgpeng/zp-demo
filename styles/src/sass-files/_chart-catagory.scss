@@ -3,7 +3,6 @@
 @import "src/_mixin-transition";
 
 
-
 section.main-chart{
     display:none;
     height:auto;
@@ -13,7 +12,7 @@ section.main-chart{
     }
     %main-chart__header__title{
         font-size:1.25em;
-        color:white;
+        color:rgba(250, 250, 250, 0.85);
     }
     & .main-chart__porcelain-header{
        @extend %main-chart__header;
@@ -31,6 +30,7 @@ section.main-chart{
         // @include flexbox;
         // @include flex-direction(row);
         // @include justify-content(space-around);
+        background-color: hsl(233, 5%, 9%);
         padding:3px;
         %mainChartContianer{
             background-color: unquote("rgba(#{$palette-cyan-300},0.1)");
@@ -52,6 +52,8 @@ section.main-chart{
     }
     & .main-chart__social-container{
         background-color: unquote("rgb(#{$palette-grey-900})");
+        padding-left: 0;
+        padding-right: 0;
         & .main-chart__agent--isOnline,
         & .main-chart__bidder--isWinner{
             padding:0;

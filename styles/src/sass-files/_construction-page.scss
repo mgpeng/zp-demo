@@ -1,6 +1,6 @@
 
-@each $one in search,hottest,coldest,agent,consult{
-    #construction-#{$one}{
+@each $one in search,hotLot,coldLot,auctionHouse{
+    ##{$one}-page{
         height: 100%;
         width: 100%;
         position: relative;

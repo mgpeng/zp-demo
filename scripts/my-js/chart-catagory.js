@@ -8,13 +8,15 @@ var ChartCatagory = (function(){
                         label: '拍品数量',
                         data: onDataArr,
                         backgroundColor: 'rgba(98, 157, 252, 0.5)',
-                        borderWidth: 1
+                        borderWidth: 1,
+                        fontColor:'rgba(250, 250, 250, 0.7)'
                     },
                     {
                         label: '成交件数',
                         data: outDataArr,
                         backgroundColor:'rgb(63, 252, 253,0.5)',
-                        borderWidth: 2
+                        borderWidth: 2,
+                        fontColor:'rgba(250, 250, 250, 0.7)'
                     }
                     ]
                 },
@@ -30,7 +32,8 @@ var ChartCatagory = (function(){
                     title: {
                         display: true,
                         text: titileStr,
-                        padding:10
+                        padding:10,
+                        fontColor:'rgba(250, 250, 250, 0.7)'
                     },
                     axisY : {
                         prefix: prefixStr,
@@ -69,7 +72,8 @@ var ChartCatagory = (function(){
                             display: true,
                             labels: {
                                 boxWidth: 3,
-                                fontSize:8
+                                fontSize:8,
+                                fontColor:'rgba(250, 250, 250, 0.7)'
                             }
                         },
                         responsive:true,

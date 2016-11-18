@@ -1,5 +1,5 @@
 var LiveAuctionBiddersChat = (function(){
-    var container=$('#live-auction').find('.live-auction__social-container');
+    var container=$('#liveAuction-page').find('.live-auction__social-container');
     var createStr = function(){
         var str='<div class="live-auction__bidder__isOnline mdl-cell mdl-cell--9-col mdl-grid">'+
                     '<span class="live-auction__bidder__header mdl-cell mdl-cell--2-col mdl-cell--middle">竞标人</span>'+

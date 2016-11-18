@@ -2,20 +2,20 @@
 //     overflow: visible;
 // }
 
-#live-auction .live-auction-container{
+#liveAuction-page .live-auction-container{
     & .live-auction__header{
-        background-color: unquote("rgb(#{$palette-blue-grey-900})");
-        color:white;
+        background-color: unquote("rgb(#{$palette-grey-900})");
+        color:hsl(0, 0%, 81.2%);
         text-align: center;
         height: 50px;
         padding-left: 5px;
         & .live-auction__header__item-container{
             & .live-auction__header__item-status{
                 font-size: 0.3em;
-                color:grey;
+                color:hsl(0, 0%, 81.2%);
             }
             & .live-auction__header__item-short-name{
-                color:white;
+                color:hsl(0, 0%, 81.2%);
                 font-size: 1.35em;
             }
             & .live-auction__header__items--current-price{
