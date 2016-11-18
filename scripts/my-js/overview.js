@@ -279,9 +279,7 @@ var Overview = (function(){
                                },0.05,'endPoint');
     };
     var showMenuClicked = function(idStr){
-            //   $('a[href*="-page"]').on('click',function(){
-            //       $('main').find('#overview').css({display:'none'});
-            //   });
+              debugger;
               if (idStr==='biddingChart'){
                   $('main').find('#overview').css({display:'none'});
                   $.getScript("./scripts/my-js/chart-catagory.js", function() {});
@@ -289,7 +287,6 @@ var Overview = (function(){
               }else if (idStr==='biddingNow'){
                   $('main').find('#overview').css({display:'none'});
                   $('main').find('#liveAuction-page').addClass('is-active');
-                  debugger;
                   $.getScript("./scripts/my-js/live-auction.js", function() {
                      LiveAuction.subEvent();
                   });
@@ -303,8 +300,9 @@ var Overview = (function(){
                       LiveBiddingChart.done();
                    //   LiveBiddingChart.lowAllBiddingsAndMoveLeft();
                   });
-              }else if (idStr === 'coldLot' && idStr ==='hotLot' && idStr==='auctionHouse') {
-
+              }else if (idStr === 'coldLot' || idStr ==='hotLot' || idStr==='auctionHouse' || idStr==='biddingSoon') {
+                  $('main').find('#overview').css({display:'none'});
+                  $('main').find('#hotLot-page').addClass('is-active');
               }
     };
     var setClickEvent = function(){
