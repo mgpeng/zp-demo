@@ -285,8 +285,10 @@ var Overview = (function(){
               if (idStr==='biddingChart'){
                   $('main').find('#overview').css({display:'none'});
                   $.getScript("./scripts/my-js/chart-catagory.js", function() {});
+                  $('main').find('#biddingChart-page').addClass('is-active');
               }else if (idStr==='biddingNow'){
                   $('main').find('#overview').css({display:'none'});
+                  $('main').find('#liveAuction-page').addClass('is-active');
                   debugger;
                   $.getScript("./scripts/my-js/live-auction.js", function() {
                      LiveAuction.subEvent();
