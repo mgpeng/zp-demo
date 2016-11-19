@@ -98,9 +98,11 @@ var MapActiveMenu = (function(){
         makeOneActiveMenu();
         var cnt= $('.map-active-menu__container');
         var items= cnt.find('.map-active-menu__item');
-        var tl=new TimelineMax();
+        var tl=new TimelineMax({repeatDelay:6});
         tl.set(cnt,{visibility:'visible',position:'relative'})
-                .staggerFrom(items,0.5,{opacity:0,scal:0.5,top:60,delay:2,onComplete:doneAni},0.1);
+                .staggerFrom(items,0.5,{opacity:0,scal:0.5,top:'60',delay:2},0.1)
+                .staggerTo(items,0.5,{opacity:0,delay:6},0.1,'donePoint')
+                .staggerTo(items,0.5,{top:'-=60',delay:6,onComplete:doneAni},0.1,'donePoint+0.05');
         activeTl.add(tl);
         function doneAni(){}
     };

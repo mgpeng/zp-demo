@@ -1,1 +1,101 @@
-<svg width="60" height="60" viewBox="0 0 119 121" xmlns="http://www.w3.org/2000/svg"><title>Page-1</title><g fill="none"><g transform="translate(2 2)" stroke-width="3" fill-rule="evenodd"><circle stroke="#898989" cx="59" cy="61" r="56"/><circle stroke="#AEACAC" cx="57.5" cy="59" r="56"/><circle stroke="#F9F9F9" cx="56" cy="56" r="56"/><g transform="rotate(19 -141.952 96.223)" stroke="#898989"><path d="M3.519 8.753h15.823v18.695H3.519z"/><rect x=".079" y=".444" width="22.703" height="8.308" rx="4.154"/><rect x=".079" y="27.448" width="22.703" height="8.308" rx="4.154"/><path d="M19.343 16.37h15.823v3.462H19.343z"/><rect x="35.167" y="15.331" width="18.575" height="6.231" rx="3"/></g><g transform="rotate(19 -136.892 90.112)" stroke="#AEACAC"><path d="M4.458 8.326h15.824v18.695H4.458z"/><rect x=".84" y=".125" width="22.704" height="8.309" rx="4.154"/><rect x="2.973" y="27.021" width="22.704" height="8.309" rx="4.154"/><path d="M20.282 15.943h15.824v3.462H20.282z"/><rect x="36.106" y="14.904" width="18.576" height="6.232" rx="3"/></g><g transform="rotate(19 -129.756 87.452)" stroke="#F9F9F9"><path d="M3.51 8.335h15.824V27.03H3.51z"/><rect x=".074" y=".389" width="22.704" height="8.309" rx="4.154"/><rect x=".623" y="27.681" width="22.704" height="8.309" rx="4.154"/><path d="M19.334 15.951h15.824v3.462H19.334z"/><rect x="35.158" y="14.912" width="18.576" height="6.232" rx="3"/></g><g transform="translate(44.565 16.16)" stroke="#898989"><ellipse cx="29.217" cy="28.42" rx="29.217" ry="28.42"><animate attributeName="fill" from="rgba(174, 172, 172, 0.1)" to="rgba(174, 172, 172, 0.1)" dur="1.5s" begin="1.s" values="rgba(174, 172, 172,0);rgba(174, 172, 172,0); rgba(174, 172, 172, 1); rgba(174, 172, 172, 0.1)" keyTimes="0; 0.7;0.95; 1" repeatCount="indefinite" fill="remove"/></ellipse><g><animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 27 31" to="365 27 29" dur="1.5s" begin="1s" repeatCount="indefinite" fill="freeze"/><path d="M28.5 36.34v-26m0 0l-3 10.8h6z"/></g><g><animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 27 31" to="365 27 29" dur="7.5s" begin="2s" repeatCount="indefinite" fill="freeze"/><path d="M28.435 31.5h20m0 0l-10.8-3v6z"/></g></g><g transform="translate(43.783 13.386)"><ellipse stroke="#ACACAC" cx="29.217" cy="28.42" rx="29.217" ry="28.42"/><g><animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 27 31" to="365 27 29" dur="1.5s" begin="1s" repeatCount="indefinite" fill="freeze"/><path d="M27.5 37.114v-26m0 0l-3 10.8h6z" stroke="#AEACAC"/></g><g><animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 27 31" to="365 27 29" dur="7.5s" begin="2s" repeatCount="indefinite" fill="freeze"/><path d="M27.217 32.5h20m0 0l-10.8-3v6z" stroke="#AEACAC"/></g></g><g stroke="#F9F9F9" transform="translate(41 13)"><ellipse cx="29.217" cy="28.42" rx="29.217" ry="28.42"/><g><animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 27 31" to="365 27 29" dur="1.5s" begin="1s" repeatCount="indefinite" fill="freeze"/><path d="M28.5 35.5v-26m0 0l-3 10.8h6z"/></g><g><animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 27 31" to="365 27 29" dur="7.5s" begin="2s" repeatCount="indefinite" fill="freeze"/><path d="M28 31.5h20m0 0l-10.8-3v6z"/></g></g><g transform="translate(31.44 93.462)" stroke="#898989"><rect y="6.924" width="45.408" height="7.617" rx="3.808"/><rect x="7.568" width="28.896" height="7.617" rx="3"/></g><g transform="translate(30.064 92.077)" stroke="#AEACAC"><rect y="6.924" width="45.408" height="7.617" rx="3.808"/><rect x="7.568" width="28.896" height="7.617" rx="3"/></g><g stroke="#F9F9F9" transform="translate(28 90)"><rect y="6.924" width="45.408" height="7.617" rx="3.808"/><rect x="7.568" width="28.896" height="7.617" rx="3"/></g></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 119 121" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Page-1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(2.000000, 2.000000)" >
+            <circle id="outline-oval-3" stroke="#898989" stroke-width="3" cx="59" cy="61" r="56" fill="none"></circle>
+            <circle id="outline-oval-2" stroke="#AEACAC" stroke-width="3" cx="57.5" cy="59" r="56"></circle>
+            <circle id="outline-oval-1" stroke="#F9F9F9" stroke-width="3" fill="none" cx="56" cy="56" r="56"></circle>
+            <g id="hammer" transform="translate(9.000000, 47.000000)" stroke-width="3">
+                <g id="hammer-3" transform="translate(34.262295, 30.266985) rotate(19.000000) translate(-34.262295, -30.266985) translate(7.262295, 12.266985)" stroke="#898989">
+                    <rect id="path-1" x="3.519" y="8.753" width="15.823" height="18.695"></rect>
+                    <rect id="path-3" x="0.079" y="0.444" width="22.703" height="8.308" rx="4.154"></rect>
+                    <rect id="path-5" x="0.079" y="27.448" width="22.703" height="8.308" rx="4.154"></rect>
+                    <rect id="path-7" x="19.343" y="16.37" width="15.823" height="3.462"></rect>
+                    <rect id="path-9" x="35.167" y="15.331" width="18.575" height="6.231" rx="3"></rect>
+                </g>
+                <g id="hammer-2" transform="translate(33.021223, 28.449523) rotate(19.000000) translate(-33.021223, -28.449523) translate(5.521223, 10.449523)" stroke="#AEACAC">
+                    <rect id="path-11" x="4.45759471" y="8.3262601" width="15.8239" height="18.6951"></rect>
+                    <rect id="path-13" x="0.839902284" y="0.124527063" width="22.7039" height="8.3089" rx="4.1544"></rect>
+                    <rect id="path-15" x="2.97300471" y="27.0214001" width="22.7039" height="8.3089" rx="4.1544"></rect>
+                    <rect id="path-17" x="20.2815047" y="15.9428001" width="15.8239" height="3.462"></rect>
+                    <rect id="path-19" x="36.1055647" y="14.9042001" width="18.5759" height="6.2317" rx="3"></rect>
+                </g>
+                <g id="hammer-1" transform="translate(32.071011, 25.818735) rotate(19.000000) translate(-32.071011, -25.818735) translate(5.071011, 7.818735)" stroke="#F9F9F9">
+                    <rect id="path-21" x="3.51002808" y="8.33452939" width="15.8239" height="18.6951"></rect>
+                    <rect id="path-23" x="0.0743938798" y="0.388918589" width="22.7039" height="8.3089" rx="4.15445"></rect>
+                    <rect id="path-25" x="0.623260932" y="27.6808057" width="22.7039" height="8.3089" rx="4.15445"></rect>
+                    <rect id="path-27" x="19.3339381" y="15.9510694" width="15.8239" height="3.46207"></rect>
+                    <rect id="path-29" x="35.1579381" y="14.9115694" width="18.5759" height="6.23172" rx="3"></rect>
+                </g>
+            </g>
+            <g id="watch" transform="translate(41.000000, 13.000000)" stroke-width="3">
+                <g id="watch-3" transform="translate(3.565217, 3.159091)" stroke="#898989">
+                    <ellipse id="Oval" cx="29.2173913" cy="28.4204545" rx="29.2173913" ry="28.4204545">
+                    <animate attributeName="fill" from="rgba(174, 172, 172, 0.1)" to="rgba(174, 172, 172, 0.1)"  dur="1.5s" begin="1.s" values="rgba(174, 172, 172,0);rgba(174, 172, 172,0); rgba(174, 172, 172, 1); rgba(174, 172, 172, 0.1)" keyTimes="0; 0.7;0.95; 1" repeatCount='indefinite' fill='remove'/>
+                    </ellipse>
+                    <g>
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+      from="0 27 31" to="365 27 29"  dur="1.5s" begin="1s"  repeatCount="indefinite" fill="freeze"/>
+                    <path d="M28.5,36.3409091 L28.5,10.3409091" id="vertical-line"></path>
+                    <polygon id="vertical-line-decoration-1" points="28.5 10.3409091 25.5 21.1409091 31.5 21.1409091"></polygon>
+                    </g>
+                    <g>
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+      from="0 27 31" to="365 27 29"  dur="7.5s" begin="2s"  repeatCount="indefinite" fill="freeze"/>
+                    <path d="M28.4347826,31.5 L48.4347826,31.5" id="horizontal-line"></path>
+                    <polygon id="horizontal-line-decoration-1" points="48.4347826 31.5 37.6347826 28.5 37.6347826 34.5"></polygon>
+                    </g>
+                </g>
+              
+                <g id="watch-2" transform="translate(2.782609, 0.386364)">
+                    <ellipse id="Oval" stroke="#ACACAC" cx="29.2173913" cy="28.4204545" rx="29.2173913" ry="28.4204545"></ellipse>
+                    <g>
+                      <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+      from="0 27 31" to="365 27 29"  dur="1.5s" begin="1s"  repeatCount="indefinite" fill="freeze"/>
+                    <path d="M27.5,37.1136364 L27.5,11.1136364" id="vertical-line" stroke="#AEACAC"></path>
+                    <polygon id="vertical-line-decoration-1" stroke="#AEACAC" points="27.5 11.1136364 24.5 21.9136364 30.5 21.9136364"></polygon>
+                    </g>
+                    <g>
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+      from="0 27 31" to="365 27 29"  dur="7.5s" begin="2s"  repeatCount="indefinite" fill="freeze"/>
+                    <path d="M27.2173913,32.5 L47.2173913,32.5" id="horizontal-line" stroke="#AEACAC"></path>
+                    <polygon id="horizontal-line-decoration-1" stroke="#AEACAC" points="47.2173913 32.5 36.4173913 29.5 36.4173913 35.5"></polygon>
+                    </g>
+                </g>
+                <g id="watch-1" stroke="#F9F9F9">
+                    <ellipse id="Oval" cx="29.2173913" cy="28.4204545" rx="29.2173913" ry="28.4204545"></ellipse>
+                    <g>
+                     <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+      from="0 27 31" to="365 27 29"  dur="1.5s" begin="1s"  repeatCount="indefinite" fill="freeze"/>
+                    <path d="M28.5,35.5 L28.5,9.5" id="vertical-line"></path>
+                    <polygon id="vertical-line-decoration-1" points="28.5 9.5 25.5 20.3 31.5 20.3"></polygon>
+                    </g>
+                    <g>
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+      from="0 27 31" to="365 27 29"  dur="7.5s" begin="2s"  repeatCount="indefinite" fill="freeze"/>
+                    <path d="M28,31.5 L48,31.5" id="horizontal-line"></path>
+                    <polygon id="horizontal-line-decoration-1" points="48 31.5 37.2 28.5 37.2 34.5"></polygon>
+                    </g>
+                </g>
+            </g>
+            <g id="bottom" transform="translate(28.000000, 90.000000)" stroke-width="3">
+                <g id="bottom-3" transform="translate(3.439996, 3.462070)" stroke="#898989">
+                    <rect id="path-31" x="0" y="6.92414069" width="45.407949" height="7.61655476" rx="3.80827738"></rect>
+                    <rect id="path-33" x="7.5679915" y="0" width="28.8959676" height="7.61655476" rx="3"></rect>
+                </g>
+                <g id="bottom-2" transform="translate(2.063998, 2.077242)" stroke="#AEACAC">
+                    <rect id="path-35" x="0" y="6.92414069" width="45.407949" height="7.61655476" rx="3.80827738"></rect>
+                    <rect id="path-37" x="7.5679915" y="0" width="28.8959676" height="7.61655476" rx="3"></rect>
+                </g>
+                <g id="bottom-1" stroke="#F9F9F9">
+                    <rect id="path-39" x="0" y="6.92414069" width="45.407949" height="7.61655476" rx="3.80827738"></rect>
+                    <rect id="path-41" x="7.5679915" y="0" width="28.8959676" height="7.61655476" rx="3"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
