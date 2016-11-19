@@ -1,1 +1,5 @@
-<svg width="360" height="150" viewBox="1 0 360 150" xmlns="http://www.w3.org/2000/svg"><path fill="hsl(188.1, 8%, 65%)" d="M0 0l361 151V0z"/><path fill="hsl(190.6, 7.8%, 60%)" d="M1 0l361 151H1z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="360px" height="150px" viewBox="1 0 360 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <polygon id="triangle-up" fill="hsl(188.1, 8%, 65%)" points="0 0 361 151 361 0"></polygon>
+    <polygon id="triangle-down" fill="hsl(190.6, 7.8%, 60%)" points="1 0 362 151 1 151"></polygon>
+</svg>

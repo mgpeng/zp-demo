@@ -1,1 +1,64 @@
-<svg width="60" height="60" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><ellipse stroke="#898989" stroke-width="3" cx="61" cy="63" rx="56" ry="56" fill="none"/><ellipse stroke="#AEACAC" stroke-width="3" cx="59" cy="60" rx="56" ry="56" fill="none"/><ellipse stroke="#F9F9F9" stroke-width="3" cx="57" cy="57" rx="56" ry="56" fill="none"/><g stroke-width="3" fill="none"><path stroke="#898989" d="M85 55h13v27H85z"><animate attributeName="y" from="31" to="31" dur="2.5s" begin="1.05s" values="31; 51; 31" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/><animate attributeName="height" from="27" to="27" dur="2.5s" begin="1.05s" values="27; 7; 27" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/></path><path stroke="#CCC" d="M83 53h13v27H83z"><animate attributeName="y" from="29" to="29" dur="2.5s" begin="1.05s" values="29; 49; 29" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/><animate attributeName="height" from="27" to="27" dur="2.5s" begin="1.05s" values="27; 7; 27" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/></path><path stroke="#FCFCFC" d="M81 51h13v27H81z"><animate attributeName="y" from="27" to="27" dur="2.5s" begin="1.05s" values="27; 47; 27" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/><animate attributeName="height" from="27" to="27" dur="2.5s" begin="1.05s" values="27; 7; 27" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/></path><path stroke="#898989" d="M63 28h13v53H63z"><animate attributeName="y" from="4" to="4" dur="2.8s" begin="1.03s" values="4; 25; 4" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/><animate attributeName="height" from="53" to="53" dur="2.8s" begin="1.03s" values="53; 32; 53" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/></path><path stroke="#CCC" d="M61 26h13v53H61z"><animate attributeName="y" from="2" to="2" dur="2.8s" begin="1.03s" values="2; 23; 2" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/><animate attributeName="height" from="53" to="53" dur="2.8s" begin="1.03s" values="53; 32; 53" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/></path><path stroke="#FCFCFC" d="M59 24h13v53H59z"><animate attributeName="y" from="0" to="0" dur="2.8s" begin="1.03s" values="0; 21; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/><animate attributeName="height" from="53" to="53" dur="2.8s" begin="1s" values="53; 32; 53" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/></path><path stroke="#898989" d="M41 45h13v36H41z"><animate attributeName="y" from="21" to="21" dur="1.7s" begin="1.06s" values="21; 11; 21" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/><animate attributeName="height" from="36" to="36" dur="1.7s" begin="1.06s" values="36; 46; 36" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/></path><path stroke="#CCC" d="M39 43h13v36H39z"><animate attributeName="y" from="19" to="19" dur="1.7s" begin="1.06s" values="19; 9; 19" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/><animate attributeName="height" from="36" to="36" dur="1.7s" begin="1.06s" values="36; 46; 36" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/></path><path stroke="#FCFCFC" d="M37 41h13v36H37z"><animate attributeName="y" from="17" to="17" dur="1.7s" begin="1.06s" values="17; 7; 17" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/><animate attributeName="height" from="36" to="36" dur="1.7s" begin="1.06s" values="36; 46; 36" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/></path><path stroke="#898989" d="M21 64h13v17H21z"><animate attributeName="y" from="40" to="40" dur="2.3s" begin="1s" values="40; 15; 40" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/><animate attributeName="height" from="17" to="17" dur="2.3s" begin="1s" values="17; 42; 17" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/></path><path stroke="#CCC" d="M19 62h13v17H19z"><animate attributeName="y" from="38" to="38" dur="2.3s" begin="1s" values="38; 13; 38" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/><animate attributeName="height" from="17" to="17" dur="2.3s" begin="1s" values="17; 42; 17" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/></path><path stroke="#FCFCFC" d="M17 60h13v17H17z"><animate attributeName="y" from="36" to="36" dur="2.3s" begin="1s" values="36; 11; 36" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/><animate attributeName="height" from="17" to="17" dur="2.3s" begin="1s" values="17; 42; 17" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill="remove"/></path></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <ellipse id="outline-oval-3" stroke="#898989" stroke-width="3" cx="61" cy="63" rx="56" ry="56" fill="none"></ellipse>
+            <ellipse id="outline-oval-2" stroke="#AEACAC" stroke-width="3" cx="59" cy="60" rx="56" ry="56" fill="none"></ellipse>
+            <ellipse id="outline-oval-1" stroke="#F9F9F9" stroke-width="3" cx="57" cy="57" rx="56" ry="56" fill="none"></ellipse>
+            <g id="chart" transform="translate(18, 24)" stroke-width="3" fill="none">
+                <g id="chart-4">
+                  <rect id="path-7" x="67" y="31" width="13" height="27" stroke="#898989">
+                    <animate attributeName="y" from="31" to="31"  dur="2.5s" begin="1.05s" values="31; 51; 31" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                    <animate attributeName="height" from="27" to="27"  dur="2.5s" begin="1.05s" values="27; 7; 27" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                  </rect>
+                  <rect id="path-15" x="65" y="29" width="13" height="27"  stroke="#CCCCCC">
+                    <animate attributeName="y" from="29" to="29"  dur="2.5s" begin="1.05s" values="29; 49; 29" keyTimes="0; 0.5; 1" repeatCount="indefinite" fill='remove'/>
+                    <animate attributeName="height" from="27" to="27"  dur="2.5s" begin="1.05s" values="27; 7; 27" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                  </rect>
+                  <rect id="path-23" x="63" y="27" width="13" height="27" stroke="#FCFCFC">
+                    <animate attributeName="y" from="27" to="27"  dur="2.5s" begin="1.05s" values="27; 47; 27" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                    <animate attributeName="height" from="27" to="27"  dur="2.5s" begin="1.05s" values="27; 7; 27" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                  </rect>
+                </g>
+                <g id="chart-3">
+                  <rect id="path-5" x="45" y="4" width="13" height="53" stroke="#898989">
+                    <animate attributeName="y" from="4" to="4"  dur="2.8s" begin="1.03s" values="4; 25; 4" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                    <animate attributeName="height" from="53" to="53"  dur="2.8s" begin="1.03s" values="53; 32; 53" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                  </rect>
+                  <rect id="path-13" x="43" y="2" width="13" height="53"  stroke="#CCCCCC">
+                    <animate attributeName="y" from="2" to="2"  dur="2.8s" begin="1.03s" values="2; 23; 2" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                    <animate attributeName="height" from="53" to="53"  dur="2.8s" begin="1.03s" values="53; 32; 53" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                  </rect>
+                  <rect id="path-21" x="41" y="0" width="13" height="53" stroke="#FCFCFC">
+                    <animate attributeName="y" from="0" to="0"  dur="2.8s" begin="1.03s" values="0; 21; 0" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                    <animate attributeName="height" from="53" to="53"  dur="2.8s" begin="1s" values="53; 32; 53" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                  </rect>
+                </g>
+                <g id="chart-2">
+                    <rect id="path-3" x="23" y="21" width="13" height="36" stroke="#898989">
+                      <animate attributeName="y" from="21" to="21"  dur="1.7s" begin="1.06s" values="21; 11; 21" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                      <animate attributeName="height" from="36" to="36"  dur="1.7s" begin="1.06s" values="36; 46; 36" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                    </rect>
+                    <rect id="path-11" x="21" y="19" width="13" height="36"  stroke="#CCCCCC">
+                      <animate attributeName="y" from="19" to="19"  dur="1.7s" begin="1.06s" values="19; 9; 19" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                      <animate attributeName="height" from="36" to="36"  dur="1.7s" begin="1.06s" values="36; 46; 36" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                    </rect>
+                    <rect id="path-19" x="19" y="17" width="13" height="36" stroke="#FCFCFC">
+                      <animate attributeName="y" from="17" to="17"  dur="1.7s" begin="1.06s" values="17; 7; 17" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                      <animate attributeName="height" from="36" to="36"  dur="1.7s" begin="1.06s" values="36; 46; 36" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                    </rect>
+                </g>
+                <g id="chart-1">
+                    <rect id="path-1" x="3" y="40" width="13" height="17"  stroke="#898989">
+                      <animate attributeName="y" from="40" to="40"  dur="2.3s" begin="1s" values="40; 15; 40" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                      <animate attributeName="height" from="17" to="17"  dur="2.3s" begin="1s" values="17; 42; 17" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                    </rect>
+                    <rect id="path-9" x="1" y="38" width="13" height="17"  stroke="#CCCCCC">
+                      <animate attributeName="y" from="38" to="38"  dur="2.3s" begin="1s" values="38; 13; 38" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                      <animate attributeName="height" from="17" to="17"  dur="2.3s" begin="1s" values="17; 42; 17" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                    </rect>
+                    <rect id="path-17" x="-1" y="36" width="13" height="17" stroke="#FCFCFC">
+                      <animate attributeName="y" from="36" to="36"  dur="2.3s" begin="1s" values="36; 11; 36" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                      <animate attributeName="height" from="17" to="17"  dur="2.3s" begin="1s" values="17; 42; 17" keyTimes="0; 0.5; 1" repeatCount='indefinite' fill='remove'/>
+                    </rect>
+                </g>
+            </g>
+</svg>
