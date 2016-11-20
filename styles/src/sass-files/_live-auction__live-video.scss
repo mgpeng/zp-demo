@@ -1,8 +1,14 @@
 #liveAuction-page div.main-live-video,
 #liveAuction-page div.all-degree-live-video{
-   height:9.5em;
-   min-height: 9em;
+    height:9.5em;
+    min-height: 9em;
     width: 100%;
     padding: 0;
     margin: 0;
+    background-color: hsl(208, 6%, 31%);
+    box-shadow: inset 5px 2px 10px 0px black,inset -5px -2px 10px 0 black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

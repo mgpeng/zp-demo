@@ -357,9 +357,9 @@ var createItemslineString = function(dataMock,itemsNum) {
 							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[0]+'" />' +
 							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[1]+'" />' +
 							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[2]+'" />' +  
-							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[0]+'" />' +
-							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[1]+'" />' +
-							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[2]+'" />' +  
+							// '<img class="itemsline-img" src="'+dataMock[obj].imgUrl[0]+'" />' +
+							// '<img class="itemsline-img" src="'+dataMock[obj].imgUrl[1]+'" />' +
+							// '<img class="itemsline-img" src="'+dataMock[obj].imgUrl[2]+'" />' +  
 							'</div>'+
 							'<p>'+dataMock[obj].description+'</p>'+
 						'</li>';
