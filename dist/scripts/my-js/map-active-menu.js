@@ -101,8 +101,7 @@ var MapActiveMenu = (function(){
         var tl=new TimelineMax({repeatDelay:6});
         tl.set(cnt,{visibility:'visible',position:'relative'})
                 .staggerFrom(items,0.5,{opacity:0,scal:0.5,top:'60',delay:2},0.1)
-                .staggerTo(items,0.5,{opacity:0,delay:6},0.1,'donePoint')
-                .staggerTo(items,0.5,{top:'-=60',delay:6,onComplete:doneAni},0.1,'donePoint+0.05');
+                .staggerTo(items,0.5,{opacity:0,top:'+=60',delay:5},0.1);
         activeTl.add(tl);
         function doneAni(){}
     };

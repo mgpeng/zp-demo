@@ -16,6 +16,13 @@ var Overview = (function(){
                         {id:'hotLot',goUpPos:"0% -50%"},
                         {id:'coldLot',goUpPos:"50% -50%"},
                         {id:'auctionHouse',goUpPos:"100% -50%"}];
+    var menuIsActiveArr=[
+                        {id:'biddingNow',bool:false},
+                        {id:'biddingSoon',bool:false},
+                        {id:'biddingChart',bool:false},
+                        {id:'hotLot',bool:false},
+                        {id:'coldLot',bool:false},
+                        {id:'auctionHouse',bool:false}];
     var headerTabIdStrArr=[];
     var tabList=$(".header-tab-container").find(".mdl-layout__tab");
     var findAniMenuOrder = function(str){
@@ -195,12 +202,6 @@ var Overview = (function(){
          tl.add(TweenMax.to(menuEl,0.02,{boxShadow:'0 0 0 0 transparent'}))
            .add(TweenMax.set(menuEl,{boxShadow:'0 0 0 0 transparent'}))
            .add (TweenMax.to(menuEl,0.1,{scale:0.3,transformOrigin:originStr,alpha:0,ease:Power4.easeOut}));
-        //    .add(TweenMax.to(text,0.2,{marginTop:'-=200'}))
-        //    .add(TweenMax.to(act,0.2,{marginTop:'+=200'}))
-        // //    .add(TweenMax.set([text,act],{display:'none'}))
-        //    .add(TweenMax.to(svg,0.1,{alpha:0}))
-        //    .add(TweenMax.to(ripple,0.1,{scale:0,transformOrigin:'50% 50%'}))
-        //    .add(TweenMax.to(menuEl,0.1,{marginLeft:'0',scale:0.6,transformOrigin:'50% 50%'}));
     };
 
     var rippleMenuBackground = function(x,y,tl,rippleColor,tLabel){
@@ -221,8 +222,14 @@ var Overview = (function(){
                                 '0 0 0 0 transparent,0 0 0 0 transparent,0 0 0 0 transparent,0 0 0 0 transparent',
                                 '0 0 0 0 '+rippleColor+',0 0 0 0 rgba(255,255,255,0.4),0 0 0 0 '+rippleColor+',0 0 0 0 rgba(0,0,0,0.08)',
                                 '0 0 180px 1400px '+rippleColor+',0 0 120px 1420px transparent,0 0 160px 1440px '+rippleColor+',0 0 110px 1460px transparent'
-                        ]}
+                        ]},
+                    onComplete:cleanOverlay
                 },0.1)],tLabel+'-=0.3');
+        function cleanOverlay(){
+            els.each(function(){
+               this.setAttribute('style','');
+            });
+        }
     };
     var collectHeaderIdStrArr = function(){
             var tabIdStrArr=[];
@@ -278,8 +285,21 @@ var Overview = (function(){
                                backgroundColor: "rgba(54, 70, 78, 1)"
                                },0.05,'endPoint');
     };
+    var setOnlyOneHeaderTabIsActive = function(idStr){
+        var isActiveObj={};
+        $.each(menuIsActiveArr,function(ind,obj){
+            if (obj.bool===true){
+                isActiveObj={id:obj.id,bool:true};
+                menuIsActiveArr[ind].bool=false;
+            }
+            if (obj.id===idStr){
+                menuIsActiveArr[ind].bool=true;
+            }
+        })
+        return isActiveObj;
+    };
     var showMenuClicked = function(idStr){
-              debugger;
+              var tl=new TimelineMax({pause:true,onComplete:setHeaderTabIsActive,onCompleteParams:[idStr]});
               if (idStr==='biddingChart'){
                   $('main').find('#overview').css({display:'none'});
                   $.getScript("./scripts/my-js/chart-catagory.js", function() {});
@@ -302,7 +322,24 @@ var Overview = (function(){
                   });
               }else if (idStr === 'coldLot' || idStr ==='hotLot' || idStr==='auctionHouse' || idStr==='biddingSoon') {
                   $('main').find('#overview').css({display:'none'});
-                  $('main').find('#hotLot-page').addClass('is-active');
+                  var showP=$('main').find('#'+idStr+'-page');
+                  if (showP.length>0 && showP.attr('display')==='block'){
+                      tl.to(showP,0.01,{alpha:0});
+                  } else {
+                      tl.set(showP,{display:'block'})
+                        .from(showP,0.2,{ marginTop:'-=50',
+                                          scale:0,transformOrigin:"50% 50%",
+                                          alpha:0,
+                                          ease:Expo.easeIn});
+                  }
+              }
+              function setHeaderTabIsActive(idStr){
+                //   debugger;
+                //   $('main').find('#'+idStr+'-page').addClass('is-active');
+                //   var obj=setOnlyOneHeaderTabIsActive(idStr);
+                //   if (!$.isEmptyObject(obj)){
+                //       $('main').find('#'+obj+'-page').removeClass('is-active');
+                //   }
               }
     };
     var setClickEvent = function(){
@@ -334,7 +371,7 @@ var Overview = (function(){
             activeOneTabAni(idStr,tl);
             
             tl.play();
-            tl.timeScale(2.5);
+            tl.timeScale(1.5);
             function doHide(idStr){
                 showMenuClicked(idStr);
             }
