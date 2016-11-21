@@ -9,10 +9,12 @@ section.main-chart{
 
     %main-chart__header{
         background-color: unquote("rgb(#{$palette-grey-900})");
+        height:2.5em;
     }
     %main-chart__header__title{
         font-size:1.25em;
         color:rgba(250, 250, 250, 0.85);
+        margin-top: 6px;
     }
     & .main-chart__porcelain-header{
        @extend %main-chart__header;

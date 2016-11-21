@@ -259,6 +259,7 @@ var Overview = (function(){
                     activeTab=obj;
                 }
             });
+            debugger;
               tl.set(tabList,{scale:1,transformOrigin:"50% 50%",backgroundColor:"rgba(54, 70, 78, 1)"})
                 .to(activeTab,0.7,{scale:1.25,transformOrigin:"50% 50%",
                                 backgroundColor: "rgba(69, 98, 193, 1)",
@@ -334,12 +335,7 @@ var Overview = (function(){
                   }
               }
               function setHeaderTabIsActive(idStr){
-                //   debugger;
-                //   $('main').find('#'+idStr+'-page').addClass('is-active');
-                //   var obj=setOnlyOneHeaderTabIsActive(idStr);
-                //   if (!$.isEmptyObject(obj)){
-                //       $('main').find('#'+obj+'-page').removeClass('is-active');
-                //   }
+
               }
     };
     var setClickEvent = function(){
@@ -368,6 +364,7 @@ var Overview = (function(){
                 }
             });
             changeClickedMenuAni(this,idStr,tl,goUpPos);
+            debugger;
             activeOneTabAni(idStr,tl);
             
             tl.play();
