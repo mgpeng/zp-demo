@@ -30,9 +30,7 @@ var menuIsActiveArr=[
         $('a[href="#liveAuction-page"]').on('click',function(){
             removeBeforeHeaderTabIsActive(this);
             $.getScript("./scripts/my-js/live-auction.js", function() {
-                LiveAuction.subEvent();
-                LiveAuction.hoverLiveBiddingItemsDetail();
-                LiveAuction.hoverLiveVideo();
+                LiveAuction.done();
             });
             $.getScript("./scripts/my-js/itemsline.js", function() {
                 Itemsline.done();
