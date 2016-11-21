@@ -309,9 +309,7 @@ var Overview = (function(){
                   $('main').find('#overview').css({display:'none'});
                   $('main').find('#liveAuction-page').addClass('is-active');
                   $.getScript("./scripts/my-js/live-auction.js", function() {
-                     LiveAuction.subEvent();
-                     LiveAuction.hoverLiveBiddingItemsDetail();
-                     LiveAuction.hoverLiveVideo();
+                     LiveAuction.done();
                   });
                   $.getScript("./scripts/my-js/itemsline.js", function() {
                       Itemsline.done();
