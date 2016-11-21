@@ -13,14 +13,31 @@ var LiveAuction=(function(){
             main.removeClass('change-itemsDetail-bg');
         });
     };
+    var hoverHorizontalTimeline = function(){
+        var liveCnt=$('#liveAuction-page').find('.live-auction-container');
+        var timeline=liveCnt.find('.cd-horizontal-timeline');
+        var arrow1=timeline.find('.cd-timeline-navigation').find('a.next');
+        var arrow2=timeline.find('.cd-timeline-navigation').find('a.prev');
+        console.log(arrow1);
+        timeline.hover(function(){
+            arrow1.addClass('up-box-shadow-when-hover');
+            arrow2.addClass('up-box-shadow-when-hover');
+        },function(){
+            arrow1.removeClass('up-box-shadow-when-hover');
+            arrow2.removeClass('up-box-shadow-when-hover');
+        });
+    };
     var hoverLiveVideo = function(){
         var lAuction=$('#liveAuction-page');
         var cnt=lAuction.find('.timeline-live-auction-container');
         var video=lAuction.find('.live-video-container').find(".main-live-video");
+        var video2=lAuction.find('.live-video-container').find(".all-degree-live-video");
         video.hover(function(){
             cnt.addClass('move-left-for-video');
+            video2.addClass('shrink-when-main-hover');
         },function(){
             cnt.removeClass('move-left-for-video');
+            video2.removeClass('shrink-when-main-hover');
         });
     };
     var subEvent = function(){
@@ -35,9 +52,16 @@ var LiveAuction=(function(){
             el.fadeIn(800);
         });
     };
+    var done = function(){
+       subEvent();
+       setTimeout(function(){
+            hoverLiveBiddingItemsDetail();
+            hoverLiveVideo();
+            hoverHorizontalTimeline();
+       },100);
+       
+    };
     return {
-       subEvent:subEvent,
-       hoverLiveBiddingItemsDetail:hoverLiveBiddingItemsDetail,
-       hoverLiveVideo:hoverLiveVideo
+       done:done
     };
 })();

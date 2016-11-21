@@ -14,11 +14,15 @@ Main Components
 	opacity: 0;
     width: 100% !important;
 	background-color: hsl(180,1%,35%);
+	transition:background-color 0.3s;
 	box-shadow: 0px 5px 15px 0px #030303;
 	margin: 0 !important;
 	padding:0;
 	@include transition(opacity .2s);
-   
+    &:hover{
+		background-color:rgba(49, 68, 68, 1);
+		transition:background-color 0.3s;
+	}
 	&::before {
 		/* never visible - this is used in jQuery to check the current MQ */
 		content: 'mobile';
@@ -155,6 +159,14 @@ Main Components
 }
 ul.cd-timeline-navigation{
 	list-style: none;
+}
+.cd-timeline-navigation a.next.up-box-shadow-when-hover{
+	box-shadow: 3px -3px 10px 3px black;
+	transition:box-shadow 0.2s;
+}
+.cd-timeline-navigation a.prev.up-box-shadow-when-hover{
+	box-shadow: -3px 3px 10px 3px black;
+	transition:box-shadow 0.2s;
 }
 .cd-timeline-navigation a {
 	/* these are the left/right arrows to navigate the timeline */
