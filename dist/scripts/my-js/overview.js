@@ -310,6 +310,8 @@ var Overview = (function(){
                   $('main').find('#liveAuction-page').addClass('is-active');
                   $.getScript("./scripts/my-js/live-auction.js", function() {
                      LiveAuction.subEvent();
+                     LiveAuction.hoverLiveBiddingItemsDetail();
+                     LiveAuction.hoverLiveVideo();
                   });
                   $.getScript("./scripts/my-js/itemsline.js", function() {
                       Itemsline.done();
@@ -364,7 +366,6 @@ var Overview = (function(){
                 }
             });
             changeClickedMenuAni(this,idStr,tl,goUpPos);
-            debugger;
             activeOneTabAni(idStr,tl);
             
             tl.play();

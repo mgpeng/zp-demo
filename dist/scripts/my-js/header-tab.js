@@ -1,26 +1,4 @@
 var HeaderTab=(function(){
-    // var tabList=$(".header-tab-container").find(".mdl-layout__tab");
-
-        //  tabList.each(function(ind,el){
-        //      $(el).on("click",function(){
-        //         var url= arrBgImages[ind];
-        //         $("header.mdl-layout__header")
-        //                  .css('background-image','url("'+url+'")');
-        //         $('.header-text-search-container')
-        //                  .find('.header-text__title')
-        //                       .css('color',arrBgTextColor[ind]);
-        //         $('.header-text-search-container')
-        //                  .find('.header-text__content--long')
-        //                       .css('color',arrBgTextColor[ind]);
-        //         $('.header-text-search-container')
-        //                  .find('.header-text__content--short')
-        //                       .css('color',arrBgTextColor[ind]);
-        //         $('.header-text-search-container')
-        //                  .find('#header-search__container')
-        //                     .find('i.material-icons')
-        //                       .css('color',arrBgTextColor[ind]);
-        //      });
-        //  });
 var menuIsActiveArr=[
                         {id:'biddingNow',bool:false},
                         {id:'biddingSoon',bool:false},
@@ -35,7 +13,6 @@ var menuIsActiveArr=[
             if (!(obj.id===idStr)){
                 var $choice=$('main').find('#'+obj.id+'-page');
                 if ($choice.hasClass('is-active')){
-                    debugger;
                     $choice.removeClass('is-active');
                 }
             }
@@ -54,6 +31,8 @@ var menuIsActiveArr=[
             removeBeforeHeaderTabIsActive(this);
             $.getScript("./scripts/my-js/live-auction.js", function() {
                 LiveAuction.subEvent();
+                LiveAuction.hoverLiveBiddingItemsDetail();
+                LiveAuction.hoverLiveVideo();
             });
             $.getScript("./scripts/my-js/itemsline.js", function() {
                 Itemsline.done();
