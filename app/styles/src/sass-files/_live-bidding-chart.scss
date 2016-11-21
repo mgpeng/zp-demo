@@ -2,15 +2,25 @@
   margin: 0 !important;
   padding:0 !important;
   & .live-bidding-chart-container{
-    background: rgb(88, 89, 89);
+    background-color: rgb(88, 89, 89);
     position: relative;
     width: 100%;
     height: 5em;
     overflow: hidden;
     box-shadow: -5px -5px 15px 0px black;
-
+    transition:all 0.3s;
     & svg#live-bidding-chart-svg{
       visibility: hidden;
     }
   }
+  & .hoverItemsDetail-smallLiveChart{
+    height:2.5em;
+    transition:all 0.3s;
+  }
+  & .live-bidding-chart-container:hover{
+    height:9.5em;
+    background-color:rgba(49, 68, 68, 1);
+    transition:all 0.3s;
+  }
 }
+
