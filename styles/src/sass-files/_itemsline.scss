@@ -217,10 +217,19 @@ ul.cd-timeline-navigation{
     width: 100%;
 	height:13.7em;
 	background-color: hsl(195.2, 0.2%, 28.4%);
+	transition:background-color 0.3s;
 	box-shadow: 0px -5px 15px 0 black;
+}
+#liveAuction-page .change-itemsDetail-bg{
+	background-color:rgba(49, 68, 68, 1);
+	transition:background-color 0.3s;
 }
 #liveAuction-page .live-auction__main .mdl-card__supporting-text{
   margin:0.7em auto ! important;
+}
+.itemsline-event-content-container .events-content.showText-canScroll{
+	overflow-y: scroll;
+	background-color:rgba(49, 68, 68, 1);
 }
 .itemsline-event-content-container .events-content {
 	position: relative;

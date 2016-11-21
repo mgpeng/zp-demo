@@ -6,9 +6,14 @@
     padding: 0;
     margin: 0;
     background-color: hsl(208, 6%, 31%);
+    transition:background-color 0.3s;
     box-shadow: inset 5px 2px 10px 0px black,inset -5px -2px 10px 0 black;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+#liveAuction-page div.main-live-video:hover{
+    background-color:hsl(208.1, 26.2%, 21%);
+    transition:background-color 0.3s;
 }
