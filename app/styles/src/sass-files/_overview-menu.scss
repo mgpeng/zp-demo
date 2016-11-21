@@ -31,7 +31,7 @@
     top: 0;
     left: 0;
 }
-@-webkit-keyframes rip 
+/*@-webkit-keyframes rip 
 {
   0%  {
     box-shadow:0 0 0 0 transparent,
@@ -72,7 +72,7 @@
                0 0 60px 440px #45c2c5,
                0 0 10px 460px transparent;
   }
-}
+}*/
 @mixin boxShadow-floatHigher ($color){
     box-shadow: 0 18px 10px 1px rgba($color, 0.28), 10px 6px 14px 2px rgba($color, 0.28), 5px 10px 5px -3px rgba($color, 0.28);
 }
@@ -157,10 +157,14 @@
         background-position:center 30%, center center;
     }
     & .overview-hotLot-title{
-        background-image: url('../images/md-bg-5-dark-red.svg'); 
+        background-image: url('../images/biddingGeneric.svg'), url('../images/md-bg-5-dark-red.svg'); 
+        background-repeat: no-repeat, no-repeat;
+        background-position:center 30%, center center;
     }
     & .overview-coldLot-title{
-        background-image: url('../images/md-bg-5.svg'); 
+        background-image: url('../images/biddingGeneric.svg'),url('../images/md-bg-5.svg'); 
+        background-repeat: no-repeat, no-repeat;
+        background-position:center 30%, center center;
     }
     & .overview-auctionHouse-title{
         background-image: url('../images/auctionHouse.svg'), url('../images/md-bg-5-dark-cyan.svg');

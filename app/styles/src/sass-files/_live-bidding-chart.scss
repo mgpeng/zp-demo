@@ -2,11 +2,12 @@
   margin: 0 !important;
   padding:0 !important;
   & .live-bidding-chart-container{
-    background:unquote("rgb(#{$palette-grey-700})");
-    position:relative;
+    background: rgb(88, 89, 89);
+    position: relative;
     width: 100%;
-    height:5em;
+    height: 5em;
     overflow: hidden;
+    box-shadow: -5px -5px 15px 0px black;
 
     & svg#live-bidding-chart-svg{
       visibility: hidden;

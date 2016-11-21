@@ -157,7 +157,7 @@ var LiveBiddingChart=(function(){
         .add(TweenMax.to([vline,srect],0.1,{rotation:'0',transformOrigin:'50% 40',ease:Elastic.easeInOut.config(1,0.6)}));
         return tl;
         function showBiddingOnHeader(biddingPrice){
-          $('#live-auction').trigger('ItemPriceFollowBiddingOnHeader',[biddingPrice]);
+          $('#liveAuction-page').trigger('ItemPriceFollowBiddingOnHeader',[biddingPrice]);
         }
   };
   

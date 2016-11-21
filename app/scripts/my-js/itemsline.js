@@ -357,9 +357,9 @@ var createItemslineString = function(dataMock,itemsNum) {
 							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[0]+'" />' +
 							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[1]+'" />' +
 							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[2]+'" />' +  
-							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[0]+'" />' +
-							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[1]+'" />' +
-							'<img class="itemsline-img" src="'+dataMock[obj].imgUrl[2]+'" />' +  
+							// '<img class="itemsline-img" src="'+dataMock[obj].imgUrl[0]+'" />' +
+							// '<img class="itemsline-img" src="'+dataMock[obj].imgUrl[1]+'" />' +
+							// '<img class="itemsline-img" src="'+dataMock[obj].imgUrl[2]+'" />' +  
 							'</div>'+
 							'<p>'+dataMock[obj].description+'</p>'+
 						'</li>';
@@ -371,7 +371,7 @@ var clickItemShowSomeOnHeader = function(){
 	var str = "";
 	els.on('click',function(){
 		str=$(this).find('a').text();
-		$('#live-auction').trigger('clickChangeItemOnHeader',[str]);
+		$('#liveAuction-page').trigger('clickChangeItemOnHeader',[str]);
 	});
 };
 var insertItemsline = function(jParent1,jParent2,dataMock,itemNum){

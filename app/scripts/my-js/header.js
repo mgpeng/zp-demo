@@ -74,9 +74,47 @@ var cnt= $(" .mdl-layout__header ").find(" .header-search__container ");
             $(arrBgImages).preload();
          }, 1000);
          var tabList=$(".header-tab-container").find(".mdl-layout__tab");
-         var navList=$(".mdl-layout__drawer").find(".mdl-navigation__link");
+         function activeOneTabAni(tabList,activeTab,index){
+            var tl=new TimelineMax({pause:true});
+            var activeBefore=[],activeAfter=[];
+            $.each(tabList,function(ind,obj){
+                if (ind<index){
+                    activeBefore.push(obj);
+                } else if (ind>index) {
+                    activeAfter.push(obj);
+                }
+            });
+              tl.set(tabList,{scale:1,transformOrigin:"50% 50%",backgroundColor:"rgba(54, 70, 78, 1)"})
+                .to(activeTab,0.7,{scale:1.25,transformOrigin:"50% 50%",
+                                backgroundColor: "rgba(69, 98, 193, 1)",
+                                ease: Elastic.easeInOut.config(1, 0.1)
+                               })
+                .staggerTo(activeBefore.reverse(),0.25,
+                               {scale:1.05,
+                                transformOrigin:"100% 50%",
+                                backgroundColor: "rgba(99, 167, 174, 1)"
+                               },0.05,'startPoint')
+                .staggerTo(activeBefore.reverse(),0.2,
+                              {scale:1,
+                               transformOrigin:"50% 50%",
+                               backgroundColor: "rgba(54, 70, 78, 1)"
+                               },0.05,'endPoint')
+               .staggerTo(activeAfter,0.25,
+                              {scale:1.05,
+                               transformOrigin:"0% 50%",
+                               backgroundColor: "rgba(99, 167, 174, 1)"
+                               },0.05,'startPoint')
+               .staggerTo(activeAfter,0.2,
+                              {scale:1,
+                               transformOrigin:"50% 50%",
+                               backgroundColor: "rgba(54, 70, 78, 1)"
+                               },0.05,'endPoint');
+              tl.play();
+              tl.timeScale(2.5);
+         }
          tabList.each(function(ind,el){
              $(el).on("click",function(){
+                activeOneTabAni(tabList,el,ind);
                 var url= arrBgImages[ind];
                 $("header.mdl-layout__header")
                          .css('background-image','url("'+url+'")');
@@ -95,6 +133,8 @@ var cnt= $(" .mdl-layout__header ").find(" .header-search__container ");
                               .css('color',arrBgTextColor[ind]);
              });
          });
+         // -------- above header tab ------------
+         var navList=$(".mdl-layout__drawer").find(".mdl-navigation__link");
          navList.each(function(ind,el){
              $(el).on("click",function(){
                 var url= arrBgImages[ind];
