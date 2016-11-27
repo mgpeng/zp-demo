@@ -98,10 +98,10 @@ var MapActiveMenu = (function(){
         makeOneActiveMenu();
         var cnt= $('.map-active-menu__container');
         var items= cnt.find('.map-active-menu__item');
-        var tl=new TimelineMax({repeatDelay:6});
+        var tl=new TimelineMax({repeatDelay:3.5});
         tl.set(cnt,{visibility:'visible',position:'relative'})
                 .staggerFrom(items,0.5,{opacity:0,scal:0.5,top:'60',delay:2},0.1)
-                .staggerTo(items,0.5,{opacity:0,top:'+=60',delay:5},0.1);
+                .staggerTo(items,0.5,{opacity:0,top:'+=60',delay:3.5},0.1);
         activeTl.add(tl);
         function doneAni(){}
     };

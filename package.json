@@ -45,7 +45,8 @@
   },
   "dependencies": {
     "compass": "^0.1.1",
-    "hover.css": "^2.0.2"
+    "hover.css": "^2.0.2",
+    "vinyl": "0.3.0"
   },
   "stylelint": {
     "rules": {

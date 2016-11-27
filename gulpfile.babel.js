@@ -82,16 +82,22 @@ gulp.task('lint', () =>
 );
 
 // Optimize images
+//  always suddenly out error: No path specified! Can not get relative 
+//  some said is vinly problem 
+//  resolve :
+//  1) install vinly @0.3.0
+//  2) change .pipe($.cache($.imagemin({  to .pipe($.imagemin({  work well !
 gulp.task('images', () =>
-  gulp.src('app/images/*.*')
-    .pipe($.cache($.imagemin({
+  gulp.src('app/images/**/*')
+    // .pipe($.filter('*.{jpg,jpeg,svg,gif,png}'))
+    .pipe($.imagemin({
+      optimizationLevel: 3,
       progressive: true,
       interlaced: true
-    })))
+    }))
     .pipe(gulp.dest('dist/images'))
     .pipe($.size({title: 'images'}))
 );
-
 // Copy all files at the root level (app)
 gulp.task('copy', () =>
   gulp.src([
@@ -104,7 +110,6 @@ gulp.task('copy', () =>
   }).pipe(gulp.dest('dist'))
     .pipe($.size({title: 'copy'}))
 );
-
 // Compile and automatically prefix stylesheets
 gulp.task('styles', () => {
   const AUTOPREFIXER_BROWSERS = [
@@ -118,7 +123,6 @@ gulp.task('styles', () => {
     'android >= 4.4',
     'bb >= 10'
   ];
-
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
     'app/styles/**/*.scss',
