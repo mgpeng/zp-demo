@@ -1,6 +1,5 @@
-
 var AddLogo = (function(){
-    var addLogo = function(jParent){
+    var addLogoNice = function(jParent){
       var svgStr= '<svg id="logo-svg" viewBox="0 0 190 190" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">'+
                     '<g stroke-width="1" fill="none" transform="translate(10, 1)">'+
                         '<path d="M90.5,0 L173,145 L8,145 L90.5,0 Z M90,141 C113.195959,141 132,121.524387 132,97.5 C132,73.4756134 113.195959,'+
@@ -30,7 +29,7 @@ var AddLogo = (function(){
         svgStr='<div class="logo-container">'+svgStr+'</div>';
         jParent.prepend(svgStr);
     };
-    var prepareAni = function(){
+    var prepareAniNice = function(){
             TweenMax.set('.triangle', {
             scale:0.95
             })
@@ -67,11 +66,45 @@ var AddLogo = (function(){
             .to('#logo-text',1.5,{scale:0.9,alpha:0.3,transformOrigin:'49.6% 67.5%',ease:Power1.easeInOut});
             TweenMax.globalTimeScale(0.5);
     };
+    var doneNice = function(jParent){
+        addLogoNice(jParent);
+        prepareAniNice();
+    };
+    // ----- above is for fun and nice logo
+    // -----  below version is for DGQ's logo
+   var addLogo = function(jParent){  
+      var svgStr= '<svg id="zp-logo-img-svg" viewBox="-1 -1 153 153" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">'+
+                        '<g id="zp-logo-img"  stroke="#979797" >'+
+                            '<circle id="circle-down" cx="75" cy="75" r="75" fill="grey"></circle>'+
+                            '<circle id="circle-up" cx="75" cy="75" r="72" fill="black"></circle>'+
+                            '<polygon id="path-n" fill="white" points="68.0932166 27.6583823 78.2091937 27.6583823 102.092417 54.1854436 102.160742 29.9242526 97.8727419 29.9242526 97.8727419 27.6583823 111.975313 27.6583823 111.975313 70.2805852 102.160742 70.2805852 78.2091937 42.058967 78.2091937 131.396089 83.3762115 131.396089 83.2555524 134.03169 68.0932166 134.074332"></polygon>'+
+                            '<polygon id="path-i"  fill="white" points="43.5293774 27.8120512 57.8746827 27.8120512 57.8746827 30.7014101 53.1161219 30.7014101 53.1161219 70.1773732 43.5293774 70.1773732"></polygon>'+       
+                        '</g>'+
+                    '</svg>';
+        svgStr='<div class="logo-container">'+svgStr+'</div>';
+        jParent.prepend(svgStr);
+    };
+    var prepareAni = function(){
+            TweenMax.set('#zp-logo-img-svg', {
+            visibility:'visible'
+            })
+            var tl = new TimelineMax({repeat:-1, repeatDelay:1});
+            
+            tl.timeScale(6);
+            tl
+            .staggerFrom('polygon#path-n polygon#path-i', 2, {
+            drawSVG:"100% 100%",
+            ease:Power4.easeInOut,
+            alpha:0
+            }, 0.2);
+            TweenMax.globalTimeScale(0.5);
+    };
     var done = function(jParent){
         addLogo(jParent);
         prepareAni();
     };
     return {
-        done:done
+        done:done,
+        doneNice:doneNice
     };
 })();
