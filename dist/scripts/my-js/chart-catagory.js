@@ -127,5 +127,5 @@ return {
                     var mChart2 = new Chart(ctx2, objStrArrLine[1]);
                     var mChart3 = new Chart(ctx3, objStrArrDuoghnut[0]);
                     var mChart4 = new Chart(ctx4, objStrArrDuoghnut[1]);
-                    var mChart3 = new Chart(ctx5, objStrArrDuoghnut[2]);
-                    var mChart4 = new Chart(ctx6, objStrArrDuoghnut[3]); 
+                    var mChart5 = new Chart(ctx5, objStrArrDuoghnut[2]);
+                    var mChart6 = new Chart(ctx6, objStrArrDuoghnut[3]); 
